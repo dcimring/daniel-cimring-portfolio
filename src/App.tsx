@@ -113,7 +113,6 @@ function App() {
 
   return (
     <div className="min-h-screen selection:bg-accent selection:text-background font-sans">
-      <div className="scanlines" />
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-md">
