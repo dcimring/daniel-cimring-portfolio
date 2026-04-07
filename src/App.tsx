@@ -183,18 +183,23 @@ function App() {
             >
               <div className="lg:col-span-8">
                 <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
-                  <span className="font-sans text-[10px] md:text-xs font-bold py-1.5 px-4 bg-primary/10 text-primary rounded-full uppercase tracking-[0.2em]">
+                  <span className="font-sans text-[10px] md:text-xs font-bold py-1.5 px-4 bg-accent/10 text-accent rounded-full uppercase tracking-[0.2em]">
                     Engineer • Entrepreneur • Curator
                   </span>
                 </motion.div>
                 
-                <motion.h1 variants={itemVariants} className="text-6xl sm:text-8xl md:text-9xl font-serif font-medium leading-[0.9] mb-10 tracking-tight">
-                  Daniel <br />
-                  <span className="italic text-primary/90">Cimring</span>
-                </motion.h1>
+                <div className="flex gap-8 items-start mb-10">
+                  <div className="w-1 h-32 md:h-48 bg-accent hidden sm:block shrink-0 mt-2" />
+                  <motion.h1 variants={itemVariants} className="text-6xl sm:text-8xl md:text-9xl font-serif font-medium leading-[0.9] tracking-tight">
+                    Daniel <br />
+                    <span className="italic text-primary/90">Cimring</span>
+                  </motion.h1>
+                </div>
 
                 <motion.p variants={itemVariants} className="text-xl md:text-3xl text-on-surface/80 max-w-2xl mb-12 leading-tight font-serif italic">
-                  Designing resilient systems at the intersection of finance, data architecture, and Bitcoin infrastructure.
+                  Designing resilient systems at the intersection of <span className="text-on-surface border-b border-accent/40">finance</span>, 
+                  <span className="text-on-surface border-b border-accent/40"> data architecture</span>, and 
+                  <span className="text-on-surface border-b border-accent/40"> Bitcoin infrastructure</span>.
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-8 items-center">
@@ -232,8 +237,8 @@ function App() {
 
           <div className="absolute bottom-12 right-12 hidden md:block">
             <div className="flex flex-col items-center gap-4">
-              <span className="text-[10px] font-sans font-bold text-primary/30 uppercase tracking-[0.5em] [writing-mode:vertical-lr]">Scroll</span>
-              <div className="w-px h-16 bg-gradient-to-b from-primary/30 to-transparent" />
+              <span className="text-[10px] font-sans font-bold text-accent uppercase tracking-[0.5em] [writing-mode:vertical-lr]">Scroll</span>
+              <div className="w-px h-16 bg-gradient-to-b from-accent to-transparent" />
             </div>
           </div>
         </section>
