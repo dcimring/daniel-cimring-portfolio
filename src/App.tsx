@@ -22,6 +22,7 @@ const Section = ({ children, className, title, id, alternative }: { children: Re
   <section id={id} className={cn("py-24 md:py-32 relative overflow-hidden", alternative ? "bg-surface-container-lowest" : "bg-background", className)}>
     <div className="container mx-auto px-6">
       <div className="flex items-center gap-6 mb-16 md:mb-24">
+        <div className="w-1 h-3 bg-accent" />
         <h2 className="text-[10px] md:text-xs font-sans font-bold tracking-[0.2em] uppercase text-primary/60">{title}</h2>
       </div>
       {children}
@@ -64,8 +65,8 @@ const EditorialQuote = ({ quote, attribution }: { quote: string; attribution: st
       "{quote}"
     </h3>
     <div className="flex items-center gap-4">
-      <div className="h-px w-8 bg-primary/30" />
-      <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-primary">{attribution}</span>
+      <div className="h-px w-8 bg-accent" />
+      <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-accent">{attribution}</span>
     </div>
   </div>
 );
@@ -199,7 +200,7 @@ function App() {
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-8 items-center">
                   <a 
                     href="mailto:daniel@cimring.com" 
-                    className="px-8 py-4 metallic-gradient text-surface-container-lowest font-sans font-bold text-xs uppercase tracking-[0.2em] rounded-sm hover:scale-[1.02] transition-transform animate-metallic"
+                    className="px-8 py-4 metallic-gradient text-surface-container-lowest font-sans font-bold text-xs uppercase tracking-[0.2em] rounded-sm hover:scale-[1.02] transition-transform animate-metallic shadow-[0_0_20px_rgba(255,237,0,0.1)]"
                   >
                     Start a Conversation
                   </a>
@@ -348,7 +349,7 @@ function App() {
         <footer className="py-24 bg-surface-container-lowest border-t border-primary/5">
           <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
               <span className="text-[10px] font-sans font-bold uppercase tracking-[0.4em] text-on-surface/40">Daniel Cimring // MMXXVI</span>
             </div>
             <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-on-surface/40">
