@@ -225,6 +225,11 @@ function App() {
                   variants={itemVariants}
                   className="aspect-[4/5] bg-surface-container-high relative overflow-hidden rounded-sm"
                 >
+                  <img 
+                    src="/daniel.jpg" 
+                    alt="Daniel Cimring"
+                    className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-primary/10" />
                   <div className="absolute bottom-8 left-8 right-8">
                     <div className="text-[10px] font-sans font-bold text-accent uppercase tracking-[0.3em] mb-2">Current Focus</div>
