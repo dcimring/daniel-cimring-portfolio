@@ -36,7 +36,7 @@ const ProjectCard = ({ title, description, tags, category }: { title: string; de
     className="group p-10 bg-surface-container-high/40 relative transition-all hover:bg-surface-container-high"
   >
     <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-      <ExternalLink size={18} className="text-primary" />
+      <ExternalLink size={18} className="text-accent" />
     </div>
     <span className="text-[10px] font-sans text-primary/50 mb-6 block uppercase tracking-[0.1em]">{category}</span>
     <h3 className="text-2xl font-serif mb-4 group-hover:text-primary transition-colors">{title}</h3>
@@ -102,13 +102,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-surface-container-lowest font-sans bg-background text-on-surface">
+    <div className="min-h-screen selection:bg-accent selection:text-surface-container-lowest font-sans bg-background text-on-surface">
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-morphism">
         <div className="container mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="font-sans text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">
               Daniel Cimring
             </span>
@@ -120,7 +120,7 @@ function App() {
               <a href="#work" className="hover:text-primary transition-colors">Portfolio</a>
               <a href="#stack" className="hover:text-primary transition-colors">Expertise</a>
               <a href="#insights" className="hover:text-primary transition-colors">Journal</a>
-              <a href="mailto:daniel@cimring.com" className="text-primary border-b border-primary/30 hover:border-primary pb-1 transition-all">Connect</a>
+              <a href="mailto:daniel@cimring.com" className="text-primary border-b border-accent/60 hover:border-accent pb-1 transition-all">Connect</a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -221,7 +221,7 @@ function App() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-primary/10" />
                   <div className="absolute bottom-8 left-8 right-8">
-                    <div className="text-[10px] font-sans font-bold text-primary/40 uppercase tracking-[0.3em] mb-2">Current Focus</div>
+                    <div className="text-[10px] font-sans font-bold text-accent uppercase tracking-[0.3em] mb-2">Current Focus</div>
                     <div className="text-sm font-serif italic text-on-surface/60">Bitcoin Infrastructure & Data Analysis</div>
                   </div>
                 </motion.div>
@@ -324,7 +324,7 @@ function App() {
                   whileHover={{ x: 20 }}
                 >
                   <div className="flex items-center gap-10">
-                    <span className="text-[10px] font-sans font-bold text-primary/30 uppercase tracking-[0.3em]">0{i + 1}</span>
+                    <span className="text-[10px] font-sans font-bold text-accent uppercase tracking-[0.3em]">0{i + 1}</span>
                     <h3 className="text-2xl md:text-3xl font-serif group-hover:text-primary transition-colors leading-tight">{article.title}</h3>
                   </div>
                   <ChevronRight size={24} className="text-primary/20 group-hover:text-primary transition-all hidden md:block" />

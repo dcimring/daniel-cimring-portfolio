@@ -5,6 +5,7 @@
   --color-on-surface: #e5e5e5; /* Soft Ivory */
   --color-primary: #c8c6c2; /* Warm Silver */
   --color-primary-dim: #bab9b4;
+  --color-accent: #ffed00; /* Electric Yellow */
   --color-surface-container-lowest: #000000; /* Pure Black */
   --color-surface-container-high: #1f1f1f; /* Charcoal */
   --color-outline-variant: rgba(72, 72, 72, 0.15); /* Ghost Border Fallback */
@@ -30,6 +31,11 @@
 @utility glass-morphism {
   background-color: rgba(14, 14, 14, 0.7);
   backdrop-filter: blur(20px);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-surface-container-lowest);
 }
 
 :root {
