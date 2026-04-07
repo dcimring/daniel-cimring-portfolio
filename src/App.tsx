@@ -187,6 +187,22 @@ function App() {
                     Engineer • Entrepreneur • Curator
                   </span>
                 </motion.div>
+
+                {/* Mobile Portrait: Editorial Lead */}
+                <motion.div 
+                  variants={itemVariants} 
+                  className="block lg:hidden w-3/4 ml-auto mb-12 relative"
+                >
+                  <div className="aspect-square bg-surface-container-high relative overflow-hidden rounded-sm shadow-2xl">
+                    <img 
+                      src="/daniel.jpg" 
+                      alt="Daniel Cimring"
+                      className="absolute inset-0 w-full h-full object-cover grayscale contrast-125"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-background/20 via-transparent to-primary/10" />
+                  </div>
+                  <div className="absolute -bottom-3 -left-3 w-12 h-12 border-l border-b border-accent/30" />
+                </motion.div>
                 
                 <div className="flex gap-8 items-start mb-10">
                   <div className="w-1 h-32 md:h-48 bg-accent hidden sm:block shrink-0 mt-2" />
