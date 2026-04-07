@@ -332,7 +332,7 @@ function App() {
         {/* Insights Section */}
         <Section title="Journal" id="insights">
           <div className="max-w-5xl">
-            <p className="text-on-surface/60 mb-20 font-display font-black uppercase text-2xl leading-tight max-w-2xl tracking-tighter">
+            <p className="text-on-surface/60 mb-20 font-display font-medium uppercase text-lg md:text-xl leading-relaxed max-w-2xl tracking-tight">
               Exploring the intersection of technology, sound money, and market behavior.
             </p>
             <div className="space-y-0">
@@ -347,25 +347,29 @@ function App() {
                   href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between group transition-all p-10 hover:bg-primary border-b border-outline-variant/10"
-                  whileHover={{ x: 20 }}
+                  className="flex items-center justify-between group transition-all p-8 hover:bg-surface-container border-b border-outline-variant/10"
+                  whileHover={{ x: 10 }}
                 >
-                  <div className="flex items-center gap-12">
-                    <span className="text-xl font-display font-black text-primary group-hover:text-on-primary tracking-tighter">0{i + 1}</span>
-                    <h3 className="text-2xl md:text-4xl font-display font-black group-hover:text-on-primary transition-colors leading-none uppercase tracking-tighter">{article.title}</h3>
+                  <div className="flex items-center gap-8">
+                    <span className="text-xs font-display font-black text-primary tracking-widest">0{i + 1}</span>
+                    <h3 className="text-xl md:text-2xl font-display font-black group-hover:text-primary transition-colors leading-tight uppercase tracking-tighter">{article.title}</h3>
                   </div>
-                  <ChevronRight size={32} className="text-primary group-hover:text-on-primary transition-all hidden md:block" />
+                  <ChevronRight size={24} className="text-primary opacity-0 group-hover:opacity-100 transition-all hidden md:block" />
                 </motion.a>
               ))}
             </div>
-            <div className="mt-24">
+            <div className="mt-20">
               <a 
                 href="https://medium.com/@danielcimring" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 bg-primary px-10 py-5 text-sm font-display font-black text-on-primary uppercase tracking-widest hover:bg-white transition-colors"
+                className="inline-flex items-center gap-4 text-xs font-display font-black text-primary uppercase tracking-[0.3em] group"
               >
-                Explore Archive <ExternalLink size={18} />
+                <span>Explore Archive</span>
+                <div className="relative">
+                  <ExternalLink size={14} />
+                  <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </div>
               </a>
             </div>
           </div>
