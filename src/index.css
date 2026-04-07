@@ -1,41 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0e0e0e; /* Deep Obsidian */
-  --color-on-surface: #e5e5e5; /* Soft Ivory */
-  --color-primary: #c8c6c2; /* Warm Silver */
-  --color-primary-dim: #bab9b4;
-  --color-accent: #ffed00; /* Electric Yellow */
-  --color-surface-container-lowest: #000000; /* Pure Black */
-  --color-surface-container-high: #1f1f1f; /* Charcoal */
-  --color-outline-variant: rgba(72, 72, 72, 0.15); /* Ghost Border Fallback */
-
-  --font-serif: "Newsreader", serif;
-  --font-sans: "Manrope", sans-serif;
-
-  --radius-sm: 0.25rem;
-
-  --animate-metallic: metallic 3s ease infinite;
-
-  @keyframes metallic {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
+  --color-background: #0e0e0e; /* Deep Black */
+  --color-on-surface: #ffffff; /* Pure White */
+  --color-primary: #fde400; /* Athletic Yellow */
+  --color-primary-dim: #edd600;
+  --color-on-primary: #655b00;
+  --color-surface-container: #191919;
+  --color-surface-container-low: #131313;
+  --color-surface-container-high: #1f1f1f;
+  --color-surface-container-highest: #262626;
+  --color-outline-variant: rgba(72, 72, 72, 0.2); /* Ghost Border Fallback */
+  
+  --font-display: "Lexend", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 0px;
 }
 
-@utility metallic-gradient {
-  background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dim), var(--color-primary));
-  background-size: 200% 200%;
+@utility kinetic-gradient {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dim));
+}
+
+@utility border-text-stroke {
+  -webkit-text-stroke: 1px var(--color-on-surface);
 }
 
 @utility glass-morphism {
-  background-color: rgba(14, 14, 14, 0.7);
+  background-color: rgba(19, 19, 19, 0.8);
   backdrop-filter: blur(20px);
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-surface-container-lowest);
+  background-color: var(--color-primary);
+  color: var(--color-background);
 }
 
 :root {
@@ -53,7 +56,7 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -61,8 +64,8 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-surface-container-high);
-  border-radius: 4px;
+  background: var(--color-surface-container-highest);
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
