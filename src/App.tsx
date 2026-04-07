@@ -196,7 +196,7 @@ function App() {
                 </div>
 
                 <motion.p variants={itemVariants} className="text-xl md:text-3xl text-on-surface max-w-2xl mb-16 leading-tight font-display font-black uppercase tracking-tighter">
-                  Designing resilient systems at the intersection of <span className="bg-primary text-on-primary px-2">finance</span>, <span className="bg-primary text-on-primary px-2">data architecture</span>, and <span className="bg-primary text-on-primary px-2">Bitcoin infrastructure</span>.
+                  Designing resilient systems at the intersection of <span className="text-on-surface opacity-30">finance</span>, <span className="text-on-surface opacity-30">data architecture</span>, and <span className="text-on-surface opacity-30">Bitcoin infrastructure</span>.
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
