@@ -208,20 +208,20 @@ function App() {
                 
                 <div className="flex gap-10 items-start mb-12">
                   <div className="w-2 h-48 md:h-64 bg-primary shrink-0 mt-2" />
-                  <motion.h1 variants={itemVariants} className="text-6xl sm:text-9xl md:text-[10rem] font-display font-black leading-[0.8] tracking-tighter uppercase">
+                  <motion.h1 variants={itemVariants} className="text-5xl sm:text-8xl md:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase">
                     Daniel <br />
                     <span className="text-on-surface opacity-20">Cimring</span>
                   </motion.h1>
                 </div>
 
-                <motion.p variants={itemVariants} className="text-xl md:text-3xl text-on-surface max-w-2xl mb-16 leading-tight font-display font-black uppercase tracking-tighter">
+                <motion.p variants={itemVariants} className="text-lg md:text-xl text-on-surface max-w-2xl mb-16 leading-relaxed font-display font-medium uppercase tracking-tight">
                   Designing resilient systems at the intersection of <span className="text-on-surface opacity-30">finance</span>, <span className="text-on-surface opacity-30">data architecture</span>, and <span className="text-on-surface opacity-30">Bitcoin infrastructure</span>.
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
                   <a 
                     href="mailto:daniel@cimring.com" 
-                    className="px-12 py-6 bg-primary text-on-primary font-display font-black text-lg uppercase tracking-tighter hover:bg-white transition-colors"
+                    className="px-10 py-5 bg-primary text-on-primary font-display font-black text-base uppercase tracking-tighter hover:bg-white transition-colors"
                   >
                     Start a Conversation
                   </a>
