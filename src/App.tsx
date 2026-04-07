@@ -102,7 +102,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-background font-sans bg-background text-on-surface">
+    <div className="min-h-screen selection:bg-primary selection:text-background font-sans bg-background text-on-surface overflow-x-hidden">
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-morphism border-b border-outline-variant/10">
@@ -171,7 +171,7 @@ function App() {
       <main>
         {/* Hero Section */}
         <section className="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background">
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-8 relative z-10">
             <motion.div 
               initial="hidden"
               animate="visible"
@@ -190,7 +190,7 @@ function App() {
                 {/* Option 1: Mobile Asymmetric Editorial Inset */}
                 <motion.div 
                   variants={itemVariants}
-                  className="block lg:hidden w-4/5 ml-auto mb-12 relative"
+                  className="block lg:hidden w-[85%] ml-auto mb-12 relative"
                 >
                   <div className="aspect-square bg-surface-container-high relative overflow-hidden">
                     <img 
@@ -208,7 +208,7 @@ function App() {
                 
                 <div className="flex gap-10 items-start mb-12">
                   <div className="w-2 h-48 md:h-64 bg-primary shrink-0 mt-2" />
-                  <motion.h1 variants={itemVariants} className="text-7xl sm:text-9xl md:text-[10rem] font-display font-black leading-[0.8] tracking-tighter uppercase">
+                  <motion.h1 variants={itemVariants} className="text-6xl sm:text-9xl md:text-[10rem] font-display font-black leading-[0.8] tracking-tighter uppercase">
                     Daniel <br />
                     <span className="text-on-surface opacity-20">Cimring</span>
                   </motion.h1>
