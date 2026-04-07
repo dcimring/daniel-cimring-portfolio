@@ -186,6 +186,25 @@ function App() {
                     </span>
                   </div>
                 </motion.div>
+
+                {/* Option 1: Mobile Asymmetric Editorial Inset */}
+                <motion.div 
+                  variants={itemVariants}
+                  className="block lg:hidden w-4/5 ml-auto mb-12 relative"
+                >
+                  <div className="aspect-square bg-surface-container-high relative overflow-hidden">
+                    <img 
+                      src="/daniel.jpg" 
+                      alt="Daniel Cimring"
+                      className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-75"
+                    />
+                    <div className="absolute inset-0 border-[10px] border-primary/20 pointer-events-none" />
+                    <div className="absolute bottom-0 right-0 bg-primary p-4">
+                      <div className="text-[8px] font-display font-black text-on-primary uppercase tracking-[0.2em] mb-1">Focus 2026</div>
+                      <div className="text-sm font-display font-black text-on-primary uppercase tracking-tighter">Bitcoin Infra</div>
+                    </div>
+                  </div>
+                </motion.div>
                 
                 <div className="flex gap-10 items-start mb-12">
                   <div className="w-2 h-48 md:h-64 bg-primary shrink-0 mt-2" />
