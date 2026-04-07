@@ -183,7 +183,7 @@ function App() {
             >
               <div className="lg:col-span-8">
                 <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
-                  <span className="font-sans text-[10px] md:text-xs font-bold py-1.5 px-4 bg-accent/10 text-accent rounded-full uppercase tracking-[0.2em]">
+                  <span className="font-sans text-[10px] md:text-xs font-bold py-3 px-6 bg-accent/10 text-accent rounded-sm uppercase tracking-[0.3em] border border-accent/20">
                     Engineer • Entrepreneur • Curator
                   </span>
                 </motion.div>
