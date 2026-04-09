@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Daniel Cimring Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page portfolio built with React, TypeScript, Vite, and Tailwind CSS v4. The site presents Daniel Cimring's work across software engineering, finance, and Bitcoin infrastructure through a bold editorial visual system.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + TypeScript
+- Vite 8 for local development and production builds
+- Tailwind CSS v4 for styling and theme tokens
+- Framer Motion for motion and interaction
+- Lucide React for iconography
 
-## React Compiler
+## Local Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install dependencies and start the dev server:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The dev server runs with `--host`, which makes local device testing easier on the same network.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev      # start the Vite dev server
+npm run build    # type-check and build for production
+npm run preview  # preview the production build locally
+npm run lint     # run ESLint across the project
 ```
+
+Use `npm run lint && npm run build` as the current validation step before shipping changes.
+
+## Project Structure
+
+```text
+src/
+  App.tsx        main page layout and sections
+  main.tsx       React entry point
+  index.css      global styles, Tailwind theme tokens, utilities
+  lib/utils.ts   shared helpers such as cn()
+
+public/          static assets served directly
+ARCHITECTURE.md  implementation notes and technical direction
+DESIGN.md        visual system and design rules
+AGENTS.md        contributor workflow and repository guidelines
+```
+
+## Design Direction
+
+The visual system favors sharp edges, aggressive typography, tonal stacking, and a high-contrast accent palette. When making UI changes, preserve the direction documented in `DESIGN.md` instead of defaulting to generic SaaS styling.
+
+## Notes
+
+- There is currently no dedicated test runner configured.
+- Production output is generated in `dist/`.
+- Keep changes aligned with the conventions documented in `AGENTS.md`.
