@@ -232,7 +232,7 @@ function App() {
                 </div>
 
                 <motion.p variants={itemVariants} className="text-lg md:text-xl text-on-surface max-w-2xl mb-16 leading-relaxed font-display font-medium uppercase tracking-tight">
-                  Designing resilient systems at the intersection of <span className="text-on-surface opacity-30">finance</span>, <span className="text-on-surface opacity-30">data architecture</span>, and <span className="text-on-surface opacity-30">Bitcoin infrastructure</span>.
+                  <span className="text-on-surface opacity-60">"What a time to be alive lets build something interesting together"</span>
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
