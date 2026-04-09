@@ -29,20 +29,16 @@ const Section = ({ children, className, title, id, alternative }: { children: Re
   </section>
 );
 
-const ProjectCard = ({ title, description, tags, category }: { title: string; description: string; tags: string[]; category: string }) => (
-  <motion.div 
-    whileHover={{ scale: 1.02 }}
-    transition={{ duration: 0.3, ease: "easeOut" }}
-    className="group bg-surface-container relative transition-all"
-  >
-    <div className="p-10">
+const ProjectCard = ({ title, description, tags, category, href }: { title: string; description: string; tags: string[]; category: string; href?: string }) => {
+  const CardContent = (
+    <div className="p-10 h-full flex flex-col">
       <div className="flex justify-between items-start mb-6">
         <span className="text-[10px] font-display font-bold text-primary uppercase tracking-widest">{category}</span>
-        <ExternalLink size={18} className="text-primary opacity-40 group-hover:opacity-100 transition-opacity" />
+        {href && <ExternalLink size={18} className="text-primary opacity-40 group-hover:opacity-100 transition-opacity" />}
       </div>
       <h3 className="text-2xl font-display font-black mb-4 uppercase tracking-tighter leading-none">{title}</h3>
-      <p className="text-on-surface/60 text-base mb-8 leading-relaxed font-sans">{description}</p>
-      <div className="flex flex-wrap gap-2">
+      <p className="text-on-surface/60 text-base mb-8 leading-relaxed font-sans flex-grow">{description}</p>
+      <div className="flex flex-wrap gap-2 mt-auto">
         {tags.map(tag => (
           <span key={tag} className="text-[10px] font-display py-1 px-3 border border-outline-variant bg-transparent text-on-surface/40 uppercase font-bold">
             {tag}
@@ -50,9 +46,25 @@ const ProjectCard = ({ title, description, tags, category }: { title: string; de
         ))}
       </div>
     </div>
-    <div className="h-1 w-0 bg-primary group-hover:w-full transition-all duration-300" />
-  </motion.div>
-);
+  );
+
+  return (
+    <motion.div 
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="group bg-surface-container relative transition-all h-full"
+    >
+      {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
+          {CardContent}
+        </a>
+      ) : (
+        CardContent
+      )}
+      <div className="h-1 w-0 bg-primary group-hover:w-full transition-all duration-300 absolute bottom-0 left-0" />
+    </motion.div>
+  );
+};
 
 const SkillBadge = ({ name, icon: Icon }: { name: string; icon: LucideIcon }) => (
   <div className="flex items-center gap-4 p-6 bg-surface-container-high group hover:bg-primary transition-all">
@@ -117,8 +129,9 @@ function App() {
           <div className="flex gap-10 items-center">
             {/* Desktop Links */}
             <div className="hidden sm:flex gap-10 items-center text-[10px] md:text-xs font-display font-black uppercase tracking-widest">
-              <a href="#work" className="hover:text-primary transition-colors">Portfolio</a>
-              <a href="#stack" className="hover:text-primary transition-colors">Expertise</a>
+              <a href="#work" className="hover:text-primary transition-colors">Experience</a>
+              <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+              <a href="#stack" className="hover:text-primary transition-colors">Technologies</a>
               <a href="#insights" className="hover:text-primary transition-colors">Journal</a>
               <a href="mailto:daniel@cimring.com" className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors">Connect</a>
             </div>
@@ -145,11 +158,15 @@ function App() {
             >
               <div className="flex flex-col gap-10 font-display text-lg font-black uppercase tracking-tighter">
                 <a href="#work" onClick={toggleMenu} className="flex items-center justify-between group">
-                  <span>Portfolio</span>
+                  <span>Experience</span>
+                  <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
+                </a>
+                <a href="#projects" onClick={toggleMenu} className="flex items-center justify-between group">
+                  <span>Projects</span>
                   <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
                 </a>
                 <a href="#stack" onClick={toggleMenu} className="flex items-center justify-between group">
-                  <span>Expertise</span>
+                  <span>Technologies</span>
                   <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
                 </a>
                 <a href="#insights" onClick={toggleMenu} className="flex items-center justify-between group">
@@ -182,7 +199,7 @@ function App() {
                 <motion.div variants={itemVariants} className="mb-10">
                   <div className="inline-block bg-primary px-6 py-3">
                     <span className="font-display text-sm font-black text-on-primary uppercase tracking-[0.2em]">
-                      Engineer • Entrepreneur • Curator
+                      Entrepreneur • Software Developer
                     </span>
                   </div>
                 </motion.div>
@@ -201,7 +218,7 @@ function App() {
                     <div className="absolute inset-0 border-[10px] border-primary/20 pointer-events-none" />
                     <div className="absolute bottom-0 right-0 bg-primary p-4">
                       <div className="text-[8px] font-display font-black text-on-primary uppercase tracking-[0.2em] mb-1">Focus 2026</div>
-                      <div className="text-sm font-display font-black text-on-primary uppercase tracking-tighter">Bitcoin Infra</div>
+                      <div className="text-sm font-display font-black text-on-primary uppercase tracking-tighter">AI Agents</div>
                     </div>
                   </div>
                 </motion.div>
@@ -249,7 +266,7 @@ function App() {
                   <div className="absolute inset-0 border-[20px] border-primary/20 pointer-events-none" />
                   <div className="absolute bottom-0 right-0 bg-primary p-8">
                     <div className="text-xs font-display font-black text-on-primary uppercase tracking-[0.3em] mb-2">Focus 2026</div>
-                    <div className="text-xl font-display font-black text-on-primary uppercase tracking-tighter">Bitcoin Infra</div>
+                    <div className="text-xl font-display font-black text-on-primary uppercase tracking-tighter">AI Agents</div>
                   </div>
                 </motion.div>
               </div>
@@ -266,11 +283,11 @@ function App() {
         </section>
 
         <ImpactBlock>
-          "The most elegant systems are those that treat complexity as a ghost—felt in the outcome, but invisible in the interface."
+          "My journey began as a child with an early computer and a love for code. Today I’m still driven by that same goal of creating meaningful solutions that users love."
         </ImpactBlock>
 
         {/* Work Section */}
-        <Section title="Portfolio" id="work">
+        <Section title="Experience" id="work">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
             <ProjectCard 
               category="Entrepreneurship"
@@ -311,14 +328,72 @@ function App() {
           </div>
         </Section>
 
+        {/* Projects Section */}
+        <Section title="Personal Projects" id="projects" alternative>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
+            <ProjectCard 
+              category="AI & Real Estate"
+              title="Cayman Property AI"
+              description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
+              tags={["AI", "Python", "Data"]}
+            />
+            <ProjectCard 
+              category="Content Strategy"
+              title="Playlist Summariser"
+              description="AI-powered tool that summarizes YouTube playlists, helping users digest high-value content efficiently."
+              tags={["AI", "YouTube API", "NLP"]}
+            />
+            <ProjectCard 
+              category="SaaS Validation"
+              title="Idea Validator"
+              description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
+              tags={["React", "Feedback", "SaaS"]}
+            />
+            <ProjectCard 
+              category="Automation"
+              title="Corporate League"
+              description="WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data."
+              href="https://www.pickleball.ky/corporate-league/leaderboard/"
+              tags={["WP", "Automation", "Discord"]}
+            />
+            <ProjectCard 
+              category="Sports Tech"
+              title="DinkDash"
+              description="Community site for tracking pickleball rankings and player statistics. A hub for the local scene."
+              href="https://dinkdash.xyz"
+              tags={["React", "Stats", "Pickleball"]}
+            />
+            <ProjectCard 
+              category="Personal Finance"
+              title="Finance AI"
+              description="Local-first AI dashboard for bank statements. Instant insights into spending patterns with zero setup."
+              tags={["AI", "Privacy", "Finance"]}
+            />
+            <ProjectCard 
+              category="FinTech"
+              title="TickerTracker"
+              description="Watchlist tracker for stocks and crypto with AI-powered ticker insertion and Discord buy-level alerts."
+              href="https://tickertracker-ai-365775520621.us-west1.run.app"
+              tags={["AI", "Discord", "Crypto"]}
+            />
+            <ProjectCard 
+              category="Social Intelligence"
+              title="TweetTracker"
+              description="Tracks public Twitter handles to detect buy/sell signals and build performance track records over time."
+              tags={["AI", "Twitter", "Trading"]}
+            />
+          </div>
+        </Section>
+
         {/* Stack Section */}
-        <Section title="Expertise" id="stack" alternative>
+        <Section title="Technologies" id="stack">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0">
             <SkillBadge name="Python" icon={Terminal} />
             <SkillBadge name="React / TS" icon={Code2} />
             <SkillBadge name="Bitcoin" icon={Bitcoin} />
             <SkillBadge name="Data Analysis" icon={BarChart3} />
             <SkillBadge name="Architecture" icon={Cpu} />
+            <SkillBadge name="AI Coding" icon={Terminal} />
             <SkillBadge name="PostgreSQL" icon={Database} />
             <SkillBadge name="Vite" icon={Globe} />
             <SkillBadge name="System Design" icon={Cpu} />
@@ -330,7 +405,7 @@ function App() {
         </Section>
 
         {/* Insights Section */}
-        <Section title="Journal" id="insights">
+        <Section title="Journal" id="insights" alternative>
           <div className="max-w-5xl">
             <p className="text-on-surface/60 mb-20 font-display font-medium uppercase text-lg md:text-xl leading-relaxed max-w-2xl tracking-tight">
               Exploring the intersection of technology, sound money, and market behavior.

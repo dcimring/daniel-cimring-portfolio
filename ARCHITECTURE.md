@@ -23,7 +23,8 @@ This portfolio is a high-performance, cutting-edge web application designed to s
 
 ### 3. Component Architecture
 - **Section Wrapper:** A reusable component that maintains consistent padding, borders, and monospaced headers.
-- **Motion-Enhanced Cards:** `ProjectCard` and `SkillBadge` use Framer Motion for subtle hover translations and staggered entry animations.
+- **Projects Grid:** A flexible 4-column (desktop) grid for rapid project iteration and showcase.
+- **Motion-Enhanced Cards:** `ProjectCard` and `SkillBadge` use Framer Motion for subtle hover translations and staggered entry animations. `ProjectCard` supports optional external links and flex-grow descriptions for visual alignment.
 - **Utility-First Styling:** Extensive use of Tailwind v4's new `@theme` engine for consistent variable management.
 
 ### 4. Code Quality & Standards
