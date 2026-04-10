@@ -18,54 +18,6 @@ import {
 } from "lucide-react";
 import { cn } from "./lib/utils";
 
-const Section = ({ children, className, title, id, alternative }: { children: React.ReactNode; className?: string; title: string; id: string; alternative?: boolean }) => (
-  <section id={id} className={cn("py-24 md:py-32 relative overflow-hidden", alternative ? "bg-surface-container-low" : "bg-background", className)}>
-    <div className="container mx-auto px-6">
-      <div className="inline-block bg-primary px-4 py-2 mb-12">
-        <h2 className="text-xs font-display font-black tracking-tighter uppercase text-on-primary">{title}</h2>
-      </div>
-      {children}
-    </div>
-  </section>
-);
-
-const ProjectCard = ({ title, description, tags, category, href }: { title: string; description: string; tags: string[]; category: string; href?: string }) => {
-  const CardContent = (
-    <div className="p-10 h-full flex flex-col">
-      <div className="flex justify-between items-start mb-6">
-        <span className="text-[10px] font-display font-bold text-primary uppercase tracking-widest">{category}</span>
-        {href && <ExternalLink size={18} className="text-primary opacity-40 group-hover:opacity-100 transition-opacity" />}
-      </div>
-      <h3 className="text-2xl font-display font-black mb-4 uppercase tracking-tighter leading-none">{title}</h3>
-      <p className="text-on-surface/60 text-base mb-8 leading-relaxed font-sans flex-grow">{description}</p>
-      <div className="flex flex-wrap gap-2 mt-auto">
-        {tags.map(tag => (
-          <span key={tag} className="text-[10px] font-display py-1 px-3 border border-outline-variant bg-transparent text-on-surface/40 uppercase font-bold">
-            {tag}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-
-  return (
-    <motion.div 
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group bg-surface-container relative transition-all h-full"
-    >
-      {href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
-          {CardContent}
-        </a>
-      ) : (
-        CardContent
-      )}
-      <div className="h-1 w-0 bg-primary group-hover:w-full transition-all duration-300 absolute bottom-0 left-0" />
-    </motion.div>
-  );
-};
-
 const ArchiveCard = ({ 
   index, 
   title, 
