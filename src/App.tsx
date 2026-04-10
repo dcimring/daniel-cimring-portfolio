@@ -133,7 +133,7 @@ function App() {
               <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
               <a href="#stack" className="hover:text-primary transition-colors">Technologies</a>
               <a href="#insights" className="hover:text-primary transition-colors">Journal</a>
-              <a href="mailto:daniel@cimring.com" className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors">Connect</a>
+              <a href="mailto:dcimring@gmail.com" className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors">Connect</a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -174,7 +174,7 @@ function App() {
                   <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
                 </a>
                 <a 
-                  href="mailto:daniel@cimring.com" 
+                  href="mailto:dcimring@gmail.com" 
                   className="mt-6 w-full py-5 bg-primary text-on-primary text-center hover:bg-white transition-all"
                 >
                   Connect
@@ -237,7 +237,7 @@ function App() {
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
                   <a 
-                    href="mailto:daniel@cimring.com" 
+                    href="mailto:dcimring@gmail.com" 
                     className="px-10 py-5 bg-primary text-on-primary font-display font-black text-base uppercase tracking-tighter hover:bg-white transition-colors"
                   >
                     Start a Conversation
@@ -461,7 +461,7 @@ function App() {
               <a href="https://github.com/dcimring" target="_blank" className="hover:text-primary transition-colors">Github</a>
               <a href="https://www.linkedin.com/in/danielcimring/" target="_blank" className="hover:text-primary transition-colors">Linkedin</a>
               <a href="https://medium.com/@danielcimring" target="_blank" className="hover:text-primary transition-colors">Medium</a>
-              <a href="mailto:daniel@cimring.com" className="hover:text-primary transition-colors">Email</a>
+              <a href="mailto:dcimring@gmail.com" className="hover:text-primary transition-colors">Email</a>
             </div>
           </div>
         </footer>
