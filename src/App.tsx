@@ -359,47 +359,56 @@ function App() {
           "My journey began as a child with an early computer and a love for code. Today I’m still driven by that same goal of creating meaningful solutions that are a joy to use."
         </ImpactBlock>
 
-        {/* Work Section */}
-        <Section title="Experience" id="work">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
-            <ProjectCard 
-              category="Entrepreneurship"
-              title="Founder & CEO"
-              description="Founded and scaled a mobile social network in Africa, optimizing for low-bandwidth environments and localized community engagement."
-              tags={["Strategy", "Scaling", "Growth"]}
-            />
-            <ProjectCard 
-              category="Enterprise"
-              title="Insurance & Gaming"
-              description="Core architecture and legacy modernization for high-stakes environments. Built high-availability systems for the insurance and gaming sectors."
-              tags={["System Design", "Legacy", "Scale"]}
-            />
-            <ProjectCard 
-              category="Hospitality"
-              title="Resort Systems"
-              description="Engineered system integrations and operational efficiencies for international hotel and resort groups through data-driven automation."
-              tags={["Automation", "Data", "Enterprise"]}
-            />
-            <ProjectCard 
-              category="Data Analysis"
-              title="Bitcoin ETF Flows"
-              description="Developed custom Python tools for tracking institutional Bitcoin adoption and market liquidity, bridging hard money and technical data."
-              tags={["Python", "Pandas", "Bitcoin"]}
-            />
-            <ProjectCard 
-              category="Bitcoin"
-              title="Sound Money Research"
-              description="Active contributor analyzing the intersection of technical infrastructure, finance, and the future of sound money."
-              tags={["Research", "Writing", "Macro"]}
-            />
-            <ProjectCard 
-              category="AI & Efficiency"
-              title="AI-Driven Engineering"
-              description="Leveraging LLMs and AI coding agents to accelerate service deployment and optimize operational costs."
-              tags={["LLMs", "AI Agents", "Efficiency"]}
-            />
+        {/* Experience Section */}
+        <section id="work" className="py-24 md:py-32 bg-background relative overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
+              <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase text-on-surface">
+                Professional <br />
+                Experience
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 border-t border-outline-variant/10">
+              <ArchiveCard 
+                index="01"
+                title="Founder & CEO"
+                description="Founded and scaled a mobile social network in Africa, optimizing for low-bandwidth environments and localized community engagement."
+                tags={["Entrepreneurship", "Strategy", "Growth"]}
+              />
+              <ArchiveCard 
+                index="02"
+                title="Insurance & Gaming"
+                description="Core architecture and legacy modernization for high-stakes environments. Built high-availability systems for the insurance and gaming sectors."
+                tags={["Enterprise", "System Design", "Scale"]}
+              />
+              <ArchiveCard 
+                index="03"
+                title="Resort Systems"
+                description="Engineered system integrations and operational efficiencies for international hotel and resort groups through data-driven automation."
+                tags={["Hospitality", "Automation", "Data"]}
+              />
+              <ArchiveCard 
+                index="04"
+                title="Bitcoin ETF Flows"
+                description="Developed custom Python tools for tracking institutional Bitcoin adoption and market liquidity, bridging hard money and technical data."
+                tags={["Data Analysis", "Python", "Bitcoin"]}
+              />
+              <ArchiveCard 
+                index="05"
+                title="Sound Money Research"
+                description="Active contributor analyzing the intersection of technical infrastructure, finance, and the future of sound money."
+                tags={["Bitcoin", "Research", "Macro"]}
+              />
+              <ArchiveCard 
+                index="06"
+                title="AI-Driven Engineering"
+                description="Leveraging LLMs and AI coding agents to accelerate service deployment and optimize operational costs."
+                tags={["AI & Efficiency", "LLMs", "AI Agents"]}
+              />
+            </div>
           </div>
-        </Section>
+        </section>
 
         {/* Projects Section */}
         <section id="projects" className="py-24 md:py-32 bg-background relative overflow-hidden">
@@ -468,69 +477,81 @@ function App() {
         </section>
 
         {/* Stack Section */}
-        <Section title="Technologies" id="stack">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0">
-            <SkillBadge name="Python" icon={Terminal} />
-            <SkillBadge name="React / TS" icon={Code2} />
-            <SkillBadge name="Bitcoin" icon={Bitcoin} />
-            <SkillBadge name="Data Analysis" icon={BarChart3} />
-            <SkillBadge name="Architecture" icon={Cpu} />
-            <SkillBadge name="AI Coding" icon={Terminal} />
-            <SkillBadge name="PostgreSQL" icon={Database} />
-            <SkillBadge name="Vite" icon={Globe} />
-            <SkillBadge name="System Design" icon={Cpu} />
-            <SkillBadge name="Finance" icon={BarChart3} />
-            <SkillBadge name="Node.js" icon={Terminal} />
-            <SkillBadge name="Tailwind" icon={Code2} />
-            <SkillBadge name="Cloud Run" icon={Globe} />
+        <section id="stack" className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-outline-variant/10">
+          <div className="container mx-auto px-6">
+            <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
+              Core <br />
+              Technologies
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0">
+              <SkillBadge name="Python" icon={Terminal} />
+              <SkillBadge name="React / TS" icon={Code2} />
+              <SkillBadge name="Bitcoin" icon={Bitcoin} />
+              <SkillBadge name="Data Analysis" icon={BarChart3} />
+              <SkillBadge name="Architecture" icon={Cpu} />
+              <SkillBadge name="AI Coding" icon={Terminal} />
+              <SkillBadge name="PostgreSQL" icon={Database} />
+              <SkillBadge name="Vite" icon={Globe} />
+              <SkillBadge name="System Design" icon={Cpu} />
+              <SkillBadge name="Finance" icon={BarChart3} />
+              <SkillBadge name="Node.js" icon={Terminal} />
+              <SkillBadge name="Tailwind" icon={Code2} />
+              <SkillBadge name="Cloud Run" icon={Globe} />
+            </div>
           </div>
-        </Section>
+        </section>
 
         {/* Insights Section */}
-        <Section title="Journal" id="insights" alternative>
-          <div className="max-w-5xl">
-            <p className="text-on-surface/60 mb-20 font-display font-medium uppercase text-lg md:text-xl leading-relaxed max-w-2xl tracking-tight">
-              Exploring the intersection of technology, sound money, and market behavior.
-            </p>
-            <div className="space-y-0">
-              {[
-                { title: "Bitcoin Price Exploration: Why Most People Shouldn't Trade It", link: "https://medium.com/@danielcimring" },
-                { title: "Dollar Cost Averaging — Does It Really Work? Bitcoin Case Study", link: "https://medium.com/@danielcimring" },
-                { title: "A strategy for trading ETH to make more BTC", link: "https://medium.com/@danielcimring" },
-                { title: "Downloading historical data from Coinmarketcap using Python", link: "https://medium.com/@danielcimring" }
-              ].map((article, i) => (
-                <motion.a 
-                  key={i}
-                  href={article.link}
-                  target="_blank"
+        <section id="insights" className="py-24 md:py-32 bg-surface-container-low relative overflow-hidden">
+          <div className="container mx-auto px-6">
+            <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
+              Personal <br />
+              Journal
+            </h2>
+            <div className="max-w-5xl">
+              <p className="text-on-surface/60 mb-20 font-display font-medium uppercase text-lg md:text-xl leading-relaxed max-w-2xl tracking-tight">
+                Some early articles I wrote mostly on Bitcoin.
+              </p>
+              <div className="space-y-0">
+                {[
+                  { title: "Bitcoin Price Exploration: Why Most People Shouldn't Trade It", link: "https://medium.com/@danielcimring" },
+                  { title: "Dollar Cost Averaging — Does It Really Work? Bitcoin Case Study", link: "https://medium.com/@danielcimring" },
+                  { title: "A strategy for trading ETH to make more BTC", link: "https://medium.com/@danielcimring" },
+                  { title: "Downloading historical data from Coinmarketcap using Python", link: "https://medium.com/@danielcimring" }
+                ].map((article, i) => (
+                  <motion.a 
+                    key={i}
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between group transition-all p-8 hover:bg-surface-container border-b border-outline-variant/10"
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center gap-8">
+                      <span className="text-xs font-display font-black text-primary tracking-widest">0{i + 1}</span>
+                      <h3 className="text-xl md:text-2xl font-display font-black group-hover:text-primary transition-colors leading-tight uppercase tracking-tighter">{article.title}</h3>
+                    </div>
+                    <ChevronRight size={24} className="text-primary opacity-0 group-hover:opacity-100 transition-all hidden md:block" />
+                  </motion.a>
+                ))}
+              </div>
+              <div className="mt-20">
+                <a 
+                  href="https://medium.com/@danielcimring" 
+                  target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between group transition-all p-8 hover:bg-surface-container border-b border-outline-variant/10"
-                  whileHover={{ x: 10 }}
+                  className="inline-flex items-center gap-4 text-xs font-display font-black text-primary uppercase tracking-[0.3em] group"
                 >
-                  <div className="flex items-center gap-8">
-                    <span className="text-xs font-display font-black text-primary tracking-widest">0{i + 1}</span>
-                    <h3 className="text-xl md:text-2xl font-display font-black group-hover:text-primary transition-colors leading-tight uppercase tracking-tighter">{article.title}</h3>
+                  <span>Explore Archive</span>
+                  <div className="relative">
+                    <ExternalLink size={14} />
+                    <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                   </div>
-                  <ChevronRight size={24} className="text-primary opacity-0 group-hover:opacity-100 transition-all hidden md:block" />
-                </motion.a>
-              ))}
-            </div>
-            <div className="mt-20">
-              <a 
-                href="https://medium.com/@danielcimring" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 text-xs font-display font-black text-primary uppercase tracking-[0.3em] group"
-              >
-                <span>Explore Archive</span>
-                <div className="relative">
-                  <ExternalLink size={14} />
-                  <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
-        </Section>
+        </section>
 
         {/* Footer */}
         <footer className="py-24 bg-surface-container-low border-t border-outline-variant/10">
