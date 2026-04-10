@@ -445,13 +445,16 @@ function App() {
               <SkillBadge name="Data Analysis" icon={BarChart3} />
               <SkillBadge name="Architecture" icon={Cpu} />
               <SkillBadge name="AI Coding" icon={Terminal} />
-              <SkillBadge name="PostgreSQL" icon={Database} />
+              <SkillBadge name="Supabase" icon={Database} />
               <SkillBadge name="Vite" icon={Globe} />
               <SkillBadge name="System Design" icon={Cpu} />
               <SkillBadge name="Finance" icon={BarChart3} />
               <SkillBadge name="Node.js" icon={Terminal} />
               <SkillBadge name="Tailwind" icon={Code2} />
               <SkillBadge name="Cloud Run" icon={Globe} />
+              <SkillBadge name="Google Apps Script" icon={Code2} />
+              <SkillBadge name="Vercel" icon={Globe} />
+              <SkillBadge name="Convex" icon={Database} />
             </div>
           </div>
         </section>
