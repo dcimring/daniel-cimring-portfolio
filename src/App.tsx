@@ -324,39 +324,40 @@ function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 border-t border-outline-variant/10">
               <ArchiveCard 
                 index="01"
-                title="Founder & CEO"
-                description="Founded and scaled a mobile social network in Africa, optimizing for low-bandwidth environments and localized community engagement."
-                tags={["Entrepreneurship", "Strategy", "Growth"]}
+                title="AI-Driven Engineering"
+                description="Leveraging LLMs, AI coding agents, and automation to develop new products and services."
+                tags={["AI Agents", "Efficiency", "Automation"]}
+                variant="light"
               />
               <ArchiveCard 
                 index="02"
-                title="Insurance & Gaming"
-                description="Core architecture and legacy modernization for high-stakes environments. Built high-availability systems for the insurance and gaming sectors."
-                tags={["Enterprise", "System Design", "Scale"]}
+                title="Founder & CEO"
+                description="Founded and scaled a mobile social network in South Africa, optimizing for low-bandwidth environments, constrained handsets, and localized community engagement."
+                tags={["Entrepreneurship", "Strategy", "Growth"]}
               />
               <ArchiveCard 
                 index="03"
-                title="Resort Systems"
-                description="Engineered system integrations and operational efficiencies for international hotel and resort groups through data-driven automation."
-                tags={["Hospitality", "Automation", "Data"]}
+                title="Online Gaming"
+                description="Product management and new product development for a world leading online gaming company."
+                tags={["Product", "Usability", "Financial Analysis"]}
               />
               <ArchiveCard 
                 index="04"
-                title="Bitcoin ETF Flows"
-                description="Developed custom Python tools for tracking institutional Bitcoin adoption and market liquidity, bridging hard money and technical data."
-                tags={["Data Analysis", "Python", "Bitcoin"]}
+                title="Hotels & Resorts"
+                description="Built a system for rewarding high value clients and tracking spend, involved with new product development and quantitative services."
+                tags={["Product", "Quantitative Analysis", "Data"]}
               />
               <ArchiveCard 
                 index="05"
-                title="Sound Money Research"
-                description="Active contributor analyzing the intersection of technical infrastructure, finance, and the future of sound money."
-                tags={["Bitcoin", "Research", "Macro"]}
+                title="Bitcoin Evangalist"
+                description="Was an early Bitcoin evangalist among friends and family. Developed custom Python tools for tracking, analysis and backtesting."
+                tags={["Data Analysis", "Python", "Bitcoin"]}
               />
               <ArchiveCard 
                 index="06"
-                title="AI-Driven Engineering"
-                description="Leveraging LLMs and AI coding agents to accelerate service deployment and optimize operational costs."
-                tags={["AI & Efficiency", "LLMs", "AI Agents"]}
+                title="Consulting"
+                description="Consultant to the board of directors during the build and deployment of a large casino resort project, and to a private company doing new product development."
+                tags={["Consulting", "Project Management"]}
               />
             </div>
           </div>
@@ -375,21 +376,23 @@ function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 border-t border-outline-variant/10">
               <ArchiveCard 
                 index="01"
+                title="Idea Validator"
+                description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
+                href="https://ideas.danielcimring.com"
+                tags={["React", "Feedback", "SaaS"]}
+                variant="light"
+              />
+              <ArchiveCard 
+                index="02"
                 title="Cayman Property AI"
                 description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
                 tags={["AI", "Python", "Data"]}
               />
               <ArchiveCard 
-                index="02"
+                index="03"
                 title="Playlist Summariser"
                 description="AI-powered tool that summarizes YouTube playlists, helping users digest high-value content efficiently."
                 tags={["AI", "YouTube API", "NLP"]}
-              />
-              <ArchiveCard 
-                index="03"
-                title="Idea Validator"
-                description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
-                tags={["React", "Feedback", "SaaS"]}
               />
               <ArchiveCard 
                 index="04"
