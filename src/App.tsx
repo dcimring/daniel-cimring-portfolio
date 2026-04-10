@@ -66,6 +66,79 @@ const ProjectCard = ({ title, description, tags, category, href }: { title: stri
   );
 };
 
+const ArchiveCard = ({ 
+  index, 
+  title, 
+  description, 
+  tags, 
+  href, 
+  variant = "dark" 
+}: { 
+  index: string; 
+  title: string; 
+  description: string; 
+  tags: string[]; 
+  href?: string;
+  variant?: "dark" | "light"
+}) => {
+  const isLight = variant === "light";
+  
+  const content = (
+    <div className={cn(
+      "p-10 h-full flex flex-col border-l-4 transition-all duration-500 ease-in-out group",
+      isLight 
+        ? "bg-primary border-primary text-background" 
+        : "bg-surface-container border-primary text-on-surface hover:bg-primary hover:text-background"
+    )}>
+      <span className={cn(
+        "text-4xl font-display font-black mb-8 block transition-colors duration-500", 
+        isLight ? "text-background/30" : "text-primary group-hover:text-background/30"
+      )}>
+        {index}
+      </span>
+      <h3 className="text-2xl font-display font-black mb-6 uppercase tracking-tighter leading-tight">
+        {title}
+      </h3>
+      <p className={cn(
+        "text-base mb-12 leading-relaxed font-sans flex-grow transition-colors duration-500", 
+        isLight ? "text-background/80" : "text-on-surface/60 group-hover:text-background/80"
+      )}>
+        {description}
+      </p>
+      <div className="flex justify-between items-center mt-auto">
+        <span className={cn(
+          "text-[10px] font-display font-bold uppercase tracking-widest transition-colors duration-500", 
+          isLight ? "text-background/40" : "text-on-surface/40 group-hover:text-background/40"
+        )}>
+          {tags.join(" / ")}
+        </span>
+        <ChevronRight size={24} className={cn(
+          "transition-all duration-500 transform group-hover:translate-x-2",
+          isLight ? "text-background" : "text-primary group-hover:text-background"
+        )} />
+      </div>
+    </div>
+  );
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="h-full"
+    >
+      {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
+          {content}
+        </a>
+      ) : (
+        content
+      )}
+    </motion.div>
+  );
+};
+
 const SkillBadge = ({ name, icon: Icon }: { name: string; icon: LucideIcon }) => (
   <div className="flex items-center gap-4 p-6 bg-surface-container-high group hover:bg-primary transition-all">
     <Icon size={20} className="text-primary group-hover:text-on-primary transition-colors" />
@@ -329,61 +402,70 @@ function App() {
         </Section>
 
         {/* Projects Section */}
-        <Section title="Personal Projects" id="projects" alternative>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
-            <ProjectCard 
-              category="AI & Real Estate"
-              title="Cayman Property AI"
-              description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
-              tags={["AI", "Python", "Data"]}
-            />
-            <ProjectCard 
-              category="Content Strategy"
-              title="Playlist Summariser"
-              description="AI-powered tool that summarizes YouTube playlists, helping users digest high-value content efficiently."
-              tags={["AI", "YouTube API", "NLP"]}
-            />
-            <ProjectCard 
-              category="SaaS Validation"
-              title="Idea Validator"
-              description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
-              tags={["React", "Feedback", "SaaS"]}
-            />
-            <ProjectCard 
-              category="Automation"
-              title="Corporate League"
-              description="WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data."
-              href="https://www.pickleball.ky/corporate-league/leaderboard/"
-              tags={["WP", "Automation", "Discord"]}
-            />
-            <ProjectCard 
-              category="Sports Tech"
-              title="DinkDash"
-              description="Community site for tracking pickleball rankings and player statistics. A hub for the local scene."
-              href="https://dinkdash.xyz"
-              tags={["React", "Stats", "Pickleball"]}
-            />
-            <ProjectCard 
-              category="Personal Finance"
-              title="Finance AI"
-              description="Local-first AI dashboard for bank statements. Instant insights into spending patterns with zero setup."
-              tags={["AI", "Privacy", "Finance"]}
-            />
-            <ProjectCard 
-              category="FinTech"
-              title="TickerTracker"
-              description="Watchlist tracker for stocks and crypto with AI-powered ticker insertion and Discord buy-level alerts."
-              href="https://tickertracker-ai-365775520621.us-west1.run.app"
-              tags={["AI", "Discord", "Crypto"]}
-            />
-            <ProjectCard 
-              category="Social Intelligence"
-              title="TweetTracker"
-              description="Tracks public Twitter handles to detect buy/sell signals and build performance track records over time."
-              tags={["AI", "Twitter", "Trading"]}
-            />
+        <section id="projects" className="py-24 md:py-32 bg-background relative overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
+              <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase">
+                What I'm <br />
+                Working On
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 border-t border-outline-variant/10">
+              <ArchiveCard 
+                index="01"
+                title="Cayman Property AI"
+                description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
+                tags={["AI", "Python", "Data"]}
+              />
+              <ArchiveCard 
+                index="02"
+                title="Playlist Summariser"
+                description="AI-powered tool that summarizes YouTube playlists, helping users digest high-value content efficiently."
+                tags={["AI", "YouTube API", "NLP"]}
+              />
+              <ArchiveCard 
+                index="03"
+                title="Idea Validator"
+                description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
+                tags={["React", "Feedback", "SaaS"]}
+              />
+              <ArchiveCard 
+                index="04"
+                title="Corporate League"
+                description="WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data."
+                href="https://www.pickleball.ky/corporate-league/leaderboard/"
+                tags={["WP", "Automation", "Discord"]}
+              />
+              <ArchiveCard 
+                index="05"
+                title="DinkDash"
+                description="Community site for tracking pickleball rankings and player statistics. A hub for the local scene."
+                href="https://dinkdash.xyz"
+                tags={["React", "Stats", "Pickleball"]}
+              />
+              <ArchiveCard 
+                index="06"
+                title="Finance AI"
+                description="Local-first AI dashboard for bank statements. Instant insights into spending patterns with zero setup."
+                tags={["AI", "Privacy", "Finance"]}
+              />
+              <ArchiveCard 
+                index="07"
+                title="TickerTracker"
+                description="Watchlist tracker for stocks and crypto with AI-powered ticker insertion and Discord buy-level alerts."
+                href="https://tickertracker-ai-365775520621.us-west1.run.app"
+                tags={["AI", "Discord", "Crypto"]}
+              />
+              <ArchiveCard 
+                index="08"
+                title="TweetTracker"
+                description="Tracks public Twitter handles to detect buy/sell signals and build performance track records over time."
+                tags={["AI", "Twitter", "Trading"]}
+              />
+            </div>
           </div>
-        </Section>
+        </section>
 
         {/* Stack Section */}
         <Section title="Technologies" id="stack">
