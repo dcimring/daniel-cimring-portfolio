@@ -384,9 +384,10 @@ function App() {
               />
               <ArchiveCard 
                 index="02"
-                title="Cayman Property AI"
-                description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
+                title="Closing Agent"
+                description="Unified real estate closing dashboard synchronizing all parties through automated workflows, transparent document management, and real-time deadline tracking"
                 tags={["AI", "Python", "Data"]}
+                href="https://closing-agent.vercel.app"
               />
               <ArchiveCard 
                 index="03"
@@ -426,6 +427,12 @@ function App() {
                 title="TweetTracker"
                 description="Tracks public Twitter handles to detect buy/sell signals and build performance track records over time."
                 tags={["AI", "Twitter", "Trading"]}
+              />
+              <ArchiveCard 
+                index="09"
+                title="Cayman Property AI"
+                description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
+                tags={["AI", "Python", "Data"]}
               />
             </div>
           </div>
