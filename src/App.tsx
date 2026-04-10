@@ -74,9 +74,9 @@ const SkillBadge = ({ name, icon: Icon }: { name: string; icon: LucideIcon }) =>
 );
 
 const ImpactBlock = ({ children }: { children: React.ReactNode }) => (
-  <div className="w-full bg-primary py-20 px-6 my-12">
+  <div className="w-full bg-primary py-16 md:py-20 px-6 my-8 md:my-12">
     <div className="container mx-auto">
-      <h3 className="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter text-on-primary leading-none text-center md:text-left">
+      <h3 className="text-3xl md:text-6xl font-display font-black uppercase tracking-tighter text-on-primary leading-none text-center md:text-left">
         {children}
       </h3>
     </div>
@@ -187,7 +187,7 @@ function App() {
 
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background">
+        <section className="min-h-screen flex items-center pt-32 pb-12 md:pb-20 relative overflow-hidden bg-background">
           <div className="container mx-auto px-8 relative z-10">
             <motion.div 
               initial="hidden"
@@ -196,7 +196,7 @@ function App() {
               className="grid lg:grid-cols-12 gap-0 items-stretch"
             >
               <div className="lg:col-span-8 flex flex-col justify-center">
-                <motion.div variants={itemVariants} className="mb-10">
+                <motion.div variants={itemVariants} className="mb-8 md:mb-10">
                   <div className="inline-block bg-primary px-6 py-3">
                     <span className="font-display text-sm font-black text-on-primary uppercase tracking-[0.2em]">
                       Entrepreneur • Software Developer
@@ -207,7 +207,7 @@ function App() {
                 {/* Option 1: Mobile Asymmetric Editorial Inset */}
                 <motion.div 
                   variants={itemVariants}
-                  className="block lg:hidden w-[85%] ml-auto mb-12 relative"
+                  className="block lg:hidden w-[85%] ml-auto mb-10 md:mb-12 relative"
                 >
                   <div className="aspect-square bg-surface-container-high relative overflow-hidden">
                     <img 
@@ -223,7 +223,7 @@ function App() {
                   </div>
                 </motion.div>
                 
-                <div className="flex gap-10 items-start mb-12">
+                <div className="flex gap-10 items-start mb-10 md:mb-12">
                   <div className="w-2 h-48 md:h-64 bg-primary shrink-0 mt-2" />
                   <motion.h1 variants={itemVariants} className="text-5xl sm:text-8xl md:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase">
                     Daniel <br />
@@ -231,7 +231,7 @@ function App() {
                   </motion.h1>
                 </div>
 
-                <motion.p variants={itemVariants} className="text-lg md:text-xl text-on-surface max-w-2xl mb-16 leading-relaxed font-display font-medium uppercase tracking-tight">
+                <motion.p variants={itemVariants} className="text-lg md:text-xl text-on-surface max-w-2xl mb-12 md:mb-16 leading-relaxed font-display font-medium uppercase tracking-tight">
                   <span className="text-on-surface opacity-60">"What a time to be alive lets build something interesting together"</span>
                 </motion.p>
 
@@ -283,7 +283,7 @@ function App() {
         </section>
 
         <ImpactBlock>
-          "My journey began as a child with an early computer and a love for code. Today I’m still driven by that same goal of creating meaningful solutions that users love."
+          "My journey began as a child with an early computer and a love for code. Today I’m still driven by that same goal of creating meaningful solutions that are a joy to use."
         </ImpactBlock>
 
         {/* Work Section */}
