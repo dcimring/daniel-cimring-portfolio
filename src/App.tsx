@@ -361,9 +361,9 @@ function App() {
 
         {/* Experience Section */}
         <section id="work" className="py-24 md:py-32 bg-background relative overflow-hidden">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
-              <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase text-on-surface">
+              <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase text-on-surface">
                 Professional <br />
                 Experience
               </h2>
@@ -412,9 +412,9 @@ function App() {
 
         {/* Projects Section */}
         <section id="projects" className="py-24 md:py-32 bg-background relative overflow-hidden">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
-              <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase">
+              <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase">
                 What I'm <br />
                 Working On
               </h2>
@@ -478,8 +478,8 @@ function App() {
 
         {/* Stack Section */}
         <section id="stack" className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-outline-variant/10">
-          <div className="container mx-auto px-6">
-            <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
               Core <br />
               Technologies
             </h2>
@@ -503,8 +503,8 @@ function App() {
 
         {/* Insights Section */}
         <section id="insights" className="py-24 md:py-32 bg-surface-container-low relative overflow-hidden">
-          <div className="container mx-auto px-6">
-            <h2 className="text-6xl md:text-9xl font-display font-black tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
               Personal <br />
               Journal
             </h2>
