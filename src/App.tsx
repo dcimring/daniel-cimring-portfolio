@@ -399,7 +399,7 @@ function App() {
                 index="04"
                 title="Corporate League"
                 description="WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data."
-                href="https://www.pickleball.ky/corporate-league/leaderboard/"
+                href="https://www.corpleague.xyz/matches"
                 tags={["WP", "Automation", "Discord"]}
               />
               <ArchiveCard 
