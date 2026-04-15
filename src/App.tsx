@@ -76,7 +76,7 @@ const ArchiveCard = ({
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, margin: "-50px" }}
       transition={{ duration: 0.5 }}
       className="h-full"
     >
@@ -157,10 +157,24 @@ function App() {
           <div className="flex gap-10 items-center">
             {/* Desktop Links */}
             <div className="hidden sm:flex gap-10 items-center text-[10px] md:text-xs font-display font-black uppercase tracking-widest">
-              <a href="#work" className="hover:text-primary transition-colors">Experience</a>
-              <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-              <a href="#stack" className="hover:text-primary transition-colors">Technologies</a>
-              <a href="#insights" className="hover:text-primary transition-colors">Journal</a>
+              {[
+                { name: "Experience", href: "#work" },
+                { name: "Projects", href: "#projects" },
+                { name: "Technologies", href: "#stack" },
+                { name: "Journal", href: "#insights" }
+              ].map((link) => (
+                <a 
+                  key={link.name}
+                  href={link.href} 
+                  className="hover:text-primary transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {link.name}
+                </a>
+              ))}
               <a href="mailto:dcimring@gmail.com" className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors">Connect</a>
             </div>
 
@@ -175,7 +189,6 @@ function App() {
           </div>
         </div>
 
-        {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -185,22 +198,26 @@ function App() {
               className="absolute top-24 left-0 w-full bg-surface-container-low border-b border-outline-variant/10 p-10 sm:hidden z-40"
             >
               <div className="flex flex-col gap-10 font-display text-lg font-black uppercase tracking-tighter">
-                <a href="#work" onClick={toggleMenu} className="flex items-center justify-between group">
-                  <span>Experience</span>
-                  <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
-                </a>
-                <a href="#projects" onClick={toggleMenu} className="flex items-center justify-between group">
-                  <span>Projects</span>
-                  <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
-                </a>
-                <a href="#stack" onClick={toggleMenu} className="flex items-center justify-between group">
-                  <span>Technologies</span>
-                  <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
-                </a>
-                <a href="#insights" onClick={toggleMenu} className="flex items-center justify-between group">
-                  <span>Journal</span>
-                  <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
-                </a>
+                {[
+                  { name: "Experience", href: "#work" },
+                  { name: "Projects", href: "#projects" },
+                  { name: "Technologies", href: "#stack" },
+                  { name: "Journal", href: "#insights" }
+                ].map((link) => (
+                  <a 
+                    key={link.name}
+                    href={link.href} 
+                    className="flex items-center justify-between group"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleMenu();
+                      document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
+                  </a>
+                ))}
                 <a 
                   href="mailto:dcimring@gmail.com" 
                   className="mt-6 w-full py-5 bg-primary text-on-primary text-center hover:bg-white transition-all"
