@@ -144,12 +144,15 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-morphism border-b border-outline-variant/10">
         <div className="container mx-auto px-6 md:px-10 h-24 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <a href="#" className="flex items-center gap-4 group" onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}>
             <div className="w-2 h-8 bg-primary" />
-            <span className="font-display text-lg font-black tracking-tighter uppercase">
+            <span className="font-display text-lg font-black tracking-tighter uppercase group-hover:text-primary transition-colors">
               Daniel Cimring
             </span>
-          </div>
+          </a>
           
           <div className="flex gap-10 items-center">
             {/* Desktop Links */}
