@@ -36,12 +36,18 @@ const ArchiveCard = ({
   const isLight = variant === "light";
   
   const content = (
-    <div className={cn(
-      "p-10 h-full flex flex-col border-l-4 transition-all duration-500 ease-in-out group",
-      isLight 
-        ? "bg-primary border-primary text-background" 
-        : "bg-surface-container border-primary text-on-surface hover:bg-primary hover:text-background"
-    )}>
+    <motion.div 
+      whileHover={{ 
+        backgroundColor: "var(--color-primary)",
+        color: "var(--color-background)"
+      }}
+      className={cn(
+        "p-10 h-full flex flex-col border-l-4 group cursor-pointer",
+        isLight 
+          ? "bg-primary border-primary text-background" 
+          : "bg-surface-container border-primary text-on-surface"
+      )}
+    >
       <span className={cn(
         "text-4xl font-display font-black mb-8 block transition-colors duration-500", 
         isLight ? "text-background/30" : "text-primary group-hover:text-background/30"
@@ -69,7 +75,7 @@ const ArchiveCard = ({
           isLight ? "text-background" : "text-primary group-hover:text-background"
         )} />
       </div>
-    </div>
+    </motion.div>
   );
 
   return (
@@ -92,10 +98,17 @@ const ArchiveCard = ({
 };
 
 const SkillBadge = ({ name, icon: Icon }: { name: string; icon: LucideIcon }) => (
-  <div className="flex items-center gap-4 p-6 bg-surface-container-high group hover:bg-primary transition-all">
+  <motion.div 
+    variants={{
+      hidden: { opacity: 0, y: 10 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    }}
+    whileHover={{ scale: 1.05, backgroundColor: "var(--color-primary)" }}
+    className="flex items-center gap-4 p-6 bg-surface-container-high group cursor-default"
+  >
     <Icon size={20} className="text-primary group-hover:text-on-primary transition-colors" />
     <span className="text-xs font-display font-black uppercase tracking-widest text-on-surface group-hover:text-on-primary">{name}</span>
-  </div>
+  </motion.div>
 );
 
 const ImpactBlock = ({ children }: { children: React.ReactNode }) => (
@@ -236,7 +249,8 @@ function App() {
           <div className="container mx-auto px-8 relative z-10">
             <motion.div 
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
+              viewport={{ once: false }}
               variants={containerVariants}
               className="grid lg:grid-cols-12 gap-0 items-stretch"
             >
@@ -335,10 +349,15 @@ function App() {
         <section id="work" className="py-24 md:py-32 bg-background relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
-              <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase text-on-surface">
+              <motion.h2 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase text-on-surface"
+              >
                 Professional <br />
                 Experience
-              </h2>
+              </motion.h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 border-t border-outline-variant/10">
@@ -387,10 +406,15 @@ function App() {
         <section id="projects" className="py-24 md:py-32 bg-background relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
-              <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase">
+              <motion.h2 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase"
+              >
                 What I'm <br />
                 Working On
-              </h2>
+              </motion.h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 border-t border-outline-variant/10">
@@ -461,11 +485,30 @@ function App() {
         {/* Stack Section */}
         <section id="stack" className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-outline-variant/10">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
+            <motion.h2 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24"
+            >
               Core <br />
               Technologies
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0">
+            </motion.h2>
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.1 }}
+              variants={{
+                hidden: { opacity: 1 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.04
+                  }
+                }
+              }}
+              className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0"
+            >
               <SkillBadge name="Python" icon={Terminal} />
               <SkillBadge name="React / TS" icon={Code2} />
               <SkillBadge name="Bitcoin" icon={Bitcoin} />
@@ -482,22 +525,41 @@ function App() {
               <SkillBadge name="Google Apps Script" icon={Code2} />
               <SkillBadge name="Vercel" icon={Globe} />
               <SkillBadge name="Convex" icon={Database} />
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Insights Section */}
         <section id="insights" className="py-24 md:py-32 bg-surface-container-low relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24">
+            <motion.h2 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24"
+            >
               Personal <br />
               Journal
-            </h2>
+            </motion.h2>
             <div className="max-w-5xl">
               <p className="text-on-surface/60 mb-20 font-display font-medium uppercase text-lg md:text-xl leading-relaxed max-w-2xl tracking-tight">
                 Some early articles I wrote mostly on Bitcoin.
               </p>
-              <div className="space-y-0">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.1 }}
+                variants={{
+                  hidden: { opacity: 1 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1
+                    }
+                  }
+                }}
+                className="space-y-0"
+              >
                 {[
                   { title: "Bitcoin Price Exploration: Why Most People Shouldn't Trade It", link: "https://medium.com/@danielcimring" },
                   { title: "Dollar Cost Averaging — Does It Really Work? Bitcoin Case Study", link: "https://medium.com/@danielcimring" },
@@ -509,8 +571,15 @@ function App() {
                     href={article.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between group transition-all p-8 hover:bg-surface-container border-b border-outline-variant/10"
-                    whileHover={{ x: 10 }}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 }
+                    }}
+                    whileHover={{ 
+                      x: 10,
+                      backgroundColor: "var(--color-surface-container)" 
+                    }}
+                    className="flex items-center justify-between group p-8 border-b border-outline-variant/10"
                   >
                     <div className="flex items-center gap-8">
                       <span className="text-xs font-display font-black text-primary tracking-widest">0{i + 1}</span>
@@ -519,7 +588,7 @@ function App() {
                     <ChevronRight size={24} className="text-primary opacity-0 group-hover:opacity-100 transition-all hidden md:block" />
                   </motion.a>
                 ))}
-              </div>
+              </motion.div>
               <div className="mt-20">
                 <a 
                   href="https://medium.com/@danielcimring" 
