@@ -478,6 +478,13 @@ function App() {
                 description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
                 tags={["AI", "Python", "Data"]}
               />
+              <ArchiveCard 
+                index="10"
+                title="Cayman Law Wiki"
+                description="AI created and maintained wiki of cayman law and regulations making it easy to view regulations, see key points, and explore linked concepts."
+                href="https://cayman-law.vercel.app/concepts/"
+                tags={["AI", "Law", "Wiki"]}
+              />
             </div>
           </div>
         </section>
