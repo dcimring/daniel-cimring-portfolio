@@ -358,7 +358,7 @@ function App() {
                 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase text-on-surface"
               >
                 Professional <br />
-                Experience
+                <span className="stroke">Experience</span>
               </motion.h2>
             </div>
 
@@ -415,7 +415,7 @@ function App() {
                 className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase"
               >
                 What I'm <br />
-                Working On
+                <span className="stroke">Working On</span>
               </motion.h2>
             </div>
 
@@ -501,7 +501,7 @@ function App() {
               className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24"
             >
               Core <br />
-              Technologies
+              <span className="stroke">Technologies</span>
             </motion.h2>
             <motion.div 
               initial="hidden"
@@ -548,7 +548,7 @@ function App() {
               className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24"
             >
               Personal <br />
-              Journal
+              <span className="stroke">Journal</span>
             </motion.h2>
             <div className="max-w-5xl">
               <p className="text-on-surface/60 mb-20 font-display font-medium uppercase text-lg md:text-xl leading-relaxed max-w-2xl tracking-tight">
