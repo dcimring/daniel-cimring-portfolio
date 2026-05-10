@@ -365,7 +365,7 @@ function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 border-t border-outline-variant/10">
               <ArchiveCard 
                 index="01"
-                title="AI-Driven Engineering"
+                title="AI-Driven Building"
                 description="Leveraging LLMs, AI coding agents, and automation to develop new products and services."
                 tags={["AI Agents", "Efficiency", "Automation"]}
                 variant="light"
