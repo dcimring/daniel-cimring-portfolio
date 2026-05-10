@@ -290,9 +290,11 @@ function App() {
                   </motion.h1>
                 </div>
 
-                <motion.p variants={itemVariants} className="text-lg md:text-xl text-on-surface/50 max-w-2xl mb-12 md:mb-16 leading-relaxed font-display font-medium uppercase tracking-tight">
-                  "What a time to be alive—let's <span className="text-primary opacity-100">build something interesting</span> together."
-                </motion.p>
+                <br />
+                <br />
+                <br />
+                <br />
+
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
                   <a 
