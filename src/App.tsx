@@ -272,7 +272,7 @@ function App() {
                     <img 
                       src="/daniel.jpg" 
                       alt="Daniel Cimring"
-                      className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-75"
+                      className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-100"
                     />
                     <div className="absolute inset-0 border-[10px] border-primary/20 pointer-events-none" />
                     <div className="absolute bottom-0 right-0 bg-primary p-4">
@@ -322,7 +322,7 @@ function App() {
                   <img 
                     src="/daniel.jpg" 
                     alt="Daniel Cimring"
-                    className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-75"
+                    className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-85"
                   />
                   <div className="absolute inset-0 border-[20px] border-primary/20 pointer-events-none" />
                   <div className="absolute bottom-0 right-0 bg-primary p-8">
