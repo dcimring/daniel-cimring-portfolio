@@ -11,6 +11,7 @@
   --color-surface-container-high: #1f1f1f;
   --color-surface-container-highest: #262626;
   --color-outline-variant: rgba(72, 72, 72, 0.2); /* Ghost Border Fallback */
+  --on: var(--color-on-surface);
   
   --font-display: "Lexend", sans-serif;
   --font-sans: "Inter", sans-serif;
@@ -70,5 +71,10 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+.stroke {
+  -webkit-text-stroke: 1px var(--on);
+  color: transparent;
 }
 

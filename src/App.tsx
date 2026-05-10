@@ -286,7 +286,7 @@ function App() {
                   <div className="w-2 h-48 md:h-64 bg-primary shrink-0 mt-2" />
                   <motion.h1 variants={itemVariants} className="text-5xl sm:text-8xl md:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase">
                     Daniel <br />
-                    <span className="text-on-surface opacity-20">Cimring</span>
+                    <span className="stroke">Cimring</span>
                   </motion.h1>
                 </div>
 
