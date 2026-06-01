@@ -422,66 +422,73 @@ function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 border-t border-outline-variant/10">
               <ArchiveCard 
                 index="01"
-                title="Idea Validator"
-                description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
-                href="https://ideas.danielcimring.com"
-                tags={["React", "Feedback", "SaaS"]}
+                title="Sentinel58"
+                description="Real-time threat and incident matrix that continuously scans centralized and decentralized markets for exploits, depegs, sanctions, and liquidity shocks."
+                href="https://www.sentinel58.com"
+                tags={["Crypto", "Risk", "SaaS"]}
                 variant="light"
               />
               <ArchiveCard 
                 index="02"
+                title="Idea Validator"
+                description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
+                href="https://ideas.danielcimring.com"
+                tags={["React", "Feedback", "SaaS"]}
+              />
+              <ArchiveCard 
+                index="03"
                 title="Closing Agent"
                 description="Unified real estate closing dashboard synchronizing all parties through automated workflows, transparent document management, and real-time deadline tracking"
                 tags={["AI", "Python", "Data"]}
                 href="https://closing-agent.vercel.app"
               />
               <ArchiveCard 
-                index="03"
+                index="04"
                 title="Playlist Summariser"
                 description="AI-powered tool that summarizes YouTube playlists, helping users digest high-value content efficiently."
                 tags={["AI", "YouTube API", "NLP"]}
               />
               <ArchiveCard 
-                index="04"
+                index="05"
                 title="Corporate League"
                 description="WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data."
                 href="https://www.corpleague.xyz/matches"
                 tags={["WP", "Automation", "Discord"]}
               />
               <ArchiveCard 
-                index="05"
+                index="06"
                 title="DinkDash"
                 description="Community site for tracking pickleball rankings and player statistics. A hub for the local scene."
                 href="https://dinkdash.xyz"
                 tags={["React", "Stats", "Pickleball"]}
               />
               <ArchiveCard 
-                index="06"
+                index="07"
                 title="Finance AI"
                 description="Local-first AI dashboard for bank statements. Instant insights into spending patterns with zero setup."
                 tags={["AI", "Privacy", "Finance"]}
               />
               <ArchiveCard 
-                index="07"
+                index="08"
                 title="TickerTracker"
                 description="Watchlist tracker for stocks and crypto with AI-powered ticker insertion and Discord buy-level alerts."
                 href="https://tickertracker-ai-365775520621.us-west1.run.app"
                 tags={["AI", "Discord", "Crypto"]}
               />
               <ArchiveCard 
-                index="08"
+                index="09"
                 title="TweetTracker"
                 description="Tracks public Twitter handles to detect buy/sell signals and build performance track records over time."
                 tags={["AI", "Twitter", "Trading"]}
               />
               <ArchiveCard 
-                index="09"
+                index="10"
                 title="Cayman Property AI"
                 description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
                 tags={["AI", "Python", "Data"]}
               />
               <ArchiveCard 
-                index="10"
+                index="11"
                 title="Cayman Law Wiki"
                 description="AI created and maintained wiki of cayman law and regulations making it easy to view regulations, see key points, and explore linked concepts."
                 href="https://cayman-law.vercel.app/concepts/"
