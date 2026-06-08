@@ -472,7 +472,6 @@ function App() {
                 index="08"
                 title="TickerTracker"
                 description="Watchlist tracker for stocks and crypto with AI-powered ticker insertion and Discord buy-level alerts."
-                href="https://tickertracker-ai-365775520621.us-west1.run.app"
                 tags={["AI", "Discord", "Crypto"]}
               />
               <ArchiveCard 
