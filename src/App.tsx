@@ -451,50 +451,45 @@ function App() {
               />
               <ArchiveCard 
                 index="05"
-                title="Playlist Summariser"
-                description="AI-powered tool that summarizes YouTube playlists, helping users digest high-value content efficiently."
-                tags={["AI", "YouTube API", "NLP"]}
-              />
-              <ArchiveCard 
-                index="06"
                 title="Corporate League"
                 description="WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data."
                 href="https://www.corpleague.xyz/matches"
                 tags={["WP", "Automation", "Discord"]}
               />
               <ArchiveCard 
-                index="07"
+                index="06"
                 title="DinkDash"
                 description="Community site for tracking pickleball rankings and player statistics. A hub for the local scene."
                 href="https://dinkdash.xyz"
                 tags={["React", "Stats", "Pickleball"]}
               />
               <ArchiveCard 
-                index="08"
+                index="07"
                 title="Finance AI"
                 description="Local-first AI dashboard for bank statements. Instant insights into spending patterns with zero setup."
                 tags={["AI", "Privacy", "Finance"]}
               />
               <ArchiveCard 
-                index="09"
-                title="TickerTracker"
-                description="Watchlist tracker for stocks and crypto with AI-powered ticker insertion and Discord buy-level alerts."
-                tags={["AI", "Discord", "Crypto"]}
+                index="08"
+                title="Trade Pilot"
+                description="Portfolio tracking tool with thesis documentation that syncs with brokerages and exchanges."
+                tags={["Finance", "Portfolio", "SaaS"]}
               />
               <ArchiveCard 
-                index="10"
-                title="TweetTracker"
+                index="09"
+                title="Alpha Terminal"
                 description="Tracks public Twitter handles to detect buy/sell signals and build performance track records over time."
+                href="https://tweet-alpha.vercel.app"
                 tags={["AI", "Twitter", "Trading"]}
               />
               <ArchiveCard 
-                index="11"
+                index="10"
                 title="Cayman Property AI"
                 description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
                 tags={["AI", "Python", "Data"]}
               />
               <ArchiveCard 
-                index="12"
+                index="11"
                 title="Cayman Law Wiki"
                 description="AI created and maintained wiki of cayman law and regulations making it easy to view regulations, see key points, and explore linked concepts."
                 href="https://cayman-law.vercel.app/concepts/"
