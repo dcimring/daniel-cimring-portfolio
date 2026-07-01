@@ -447,7 +447,7 @@ function App() {
                 title="Closing Agent"
                 description="Unified real estate closing dashboard synchronizing all parties through automated workflows, transparent document management, and real-time deadline tracking"
                 tags={["AI", "Python", "Data"]}
-                href="https://closing-agent.vercel.app"
+                href="https://closing-agent.pages.dev"
               />
               <ArchiveCard 
                 index="05"
