@@ -495,6 +495,13 @@ function App() {
                 href="https://cayman-law.vercel.app/concepts/"
                 tags={["AI", "Law", "Wiki"]}
               />
+              <ArchiveCard 
+                index="12"
+                title="Tradewind"
+                description="The Caribbean labour rail — agentic infrastructure that moves the region's workers into the region's jobs. Entry for the FutureCaribbean Buildathon."
+                href="https://caribbean.work"
+                tags={["AI", "Labor", "Infrastructure"]}
+              />
             </div>
           </div>
         </section>
