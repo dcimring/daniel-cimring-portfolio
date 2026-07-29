@@ -490,10 +490,10 @@ function App() {
               />
               <ArchiveCard 
                 index="11"
-                title="Cayman Law Wiki"
-                description="AI created and maintained wiki of cayman law and regulations making it easy to view regulations, see key points, and explore linked concepts."
-                href="https://cayman-law.vercel.app/concepts/"
-                tags={["AI", "Law", "Wiki"]}
+                title="GazettePulse Regulations"
+                description="Free regulatory knowledgebase and searchable library of Acts, Regulations, Rules, and guidance for offshore financial services regulators across Cayman, BVI, Bermuda, Jersey & Guernsey."
+                href="https://gazettepulse.com/regulations/"
+                tags={["AI", "Law", "Compliance"]}
               />
               <ArchiveCard 
                 index="12"
