@@ -4,7 +4,10 @@ import { projects } from "../../data/projects";
 import { cardIndex } from "../../lib/utils";
 
 const Projects = () => (
-  <section id="projects" className="py-24 md:py-32 bg-background relative overflow-hidden">
+  <section
+    id="projects"
+    className="py-24 md:py-32 bg-background relative overflow-hidden"
+  >
     <div className="container mx-auto px-4 md:px-6">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
         <motion.h2

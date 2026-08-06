@@ -4,7 +4,10 @@ import { skills } from "../../data/skills";
 import { stackContainerVariants } from "../motion";
 
 const Stack = () => (
-  <section id="stack" className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-outline-variant/10">
+  <section
+    id="stack"
+    className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-outline-variant/10"
+  >
     <div className="container mx-auto px-4 md:px-6">
       <motion.h2
         initial={{ opacity: 0, x: -20 }}

@@ -1,4 +1,12 @@
-import { Terminal, Cpu, BarChart3, Bitcoin, Code2, Database, Globe } from "lucide-react";
+import {
+  Terminal,
+  Cpu,
+  BarChart3,
+  Bitcoin,
+  Code2,
+  Database,
+  Globe,
+} from "lucide-react";
 import type { Skill } from "../types";
 
 export const skills: Skill[] = [
@@ -17,5 +25,5 @@ export const skills: Skill[] = [
   { name: "Cloud Run", icon: Globe },
   { name: "Google Apps Script", icon: Code2 },
   { name: "Vercel", icon: Globe },
-  { name: "Convex", icon: Database }
+  { name: "Convex", icon: Database },
 ];

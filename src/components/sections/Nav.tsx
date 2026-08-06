@@ -7,16 +7,20 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = useCallback(() => {
-    setIsMenuOpen(prev => !prev);
+    setIsMenuOpen((prev) => !prev);
   }, []);
 
   return (
     <nav className="fixed top-0 w-full z-50 glass-morphism border-b border-outline-variant/10">
       <div className="container mx-auto px-6 md:px-10 h-24 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-4 group" onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}>
+        <a
+          href="#"
+          className="flex items-center gap-4 group"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <div className="w-2 h-8 bg-primary" />
           <span className="font-display text-lg font-black tracking-tighter uppercase group-hover:text-primary transition-colors">
             Daniel Cimring
@@ -33,13 +37,20 @@ const Nav = () => {
                 className="hover:text-primary transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .querySelector(link.href)
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 {link.name}
               </a>
             ))}
-            <a href={`mailto:${email}`} className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors">Connect</a>
+            <a
+              href={`mailto:${email}`}
+              className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors"
+            >
+              Connect
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -73,11 +84,16 @@ const Nav = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     toggleMenu();
-                    document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                    document
+                      .querySelector(link.href)
+                      ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
                   <span>{link.name}</span>
-                  <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
+                  <ChevronRight
+                    size={20}
+                    className="text-primary opacity-0 group-hover:opacity-100 transition-all"
+                  />
                 </a>
               ))}
               <a

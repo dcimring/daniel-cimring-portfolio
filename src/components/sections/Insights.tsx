@@ -5,7 +5,10 @@ import { socials } from "../../data/site";
 import { articleItemVariants, insightsContainerVariants } from "../motion";
 
 const Insights = () => (
-  <section id="insights" className="py-24 md:py-32 bg-surface-container-low relative overflow-hidden">
+  <section
+    id="insights"
+    className="py-24 md:py-32 bg-surface-container-low relative overflow-hidden"
+  >
     <div className="container mx-auto px-4 md:px-6">
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
@@ -36,15 +39,22 @@ const Insights = () => (
               variants={articleItemVariants}
               whileHover={{
                 x: 10,
-                backgroundColor: "var(--color-surface-container)"
+                backgroundColor: "var(--color-surface-container)",
               }}
               className="flex items-center justify-between group p-8 border-b border-outline-variant/10"
             >
               <div className="flex items-center gap-8">
-                <span className="text-xs font-display font-black text-primary tracking-widest">0{i + 1}</span>
-                <h3 className="text-xl md:text-2xl font-display font-black group-hover:text-primary transition-colors leading-tight uppercase tracking-tighter">{article.title}</h3>
+                <span className="text-xs font-display font-black text-primary tracking-widest">
+                  0{i + 1}
+                </span>
+                <h3 className="text-xl md:text-2xl font-display font-black group-hover:text-primary transition-colors leading-tight uppercase tracking-tighter">
+                  {article.title}
+                </h3>
               </div>
-              <ChevronRight size={24} className="text-primary opacity-0 group-hover:opacity-100 transition-all hidden md:block" />
+              <ChevronRight
+                size={24}
+                className="text-primary opacity-0 group-hover:opacity-100 transition-all hidden md:block"
+              />
             </motion.a>
           ))}
         </motion.div>

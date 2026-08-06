@@ -29,7 +29,11 @@ const Hero = () => (
           >
             <div className="aspect-square bg-surface-container-high relative overflow-hidden">
               <picture>
-                <source type="image/webp" srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w" sizes="(min-width: 1024px) 30vw, 85vw" />
+                <source
+                  type="image/webp"
+                  srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w"
+                  sizes="(min-width: 1024px) 30vw, 85vw"
+                />
                 <img
                   src="/daniel-960.jpg"
                   alt="Daniel Cimring"
@@ -41,15 +45,22 @@ const Hero = () => (
               </picture>
               <div className="absolute inset-0 border-[10px] border-primary/20 pointer-events-none" />
               <div className="absolute bottom-0 right-0 bg-primary p-4">
-                <div className="text-[8px] font-display font-black text-on-primary uppercase tracking-[0.2em] mb-1">Focus 2026</div>
-                <div className="text-sm font-display font-black text-on-primary uppercase tracking-tighter">AI Agents</div>
+                <div className="text-[8px] font-display font-black text-on-primary uppercase tracking-[0.2em] mb-1">
+                  Focus 2026
+                </div>
+                <div className="text-sm font-display font-black text-on-primary uppercase tracking-tighter">
+                  AI Agents
+                </div>
               </div>
             </div>
           </motion.div>
 
           <div className="flex gap-10 items-start mb-10 md:mb-12">
             <div className="w-2 h-48 md:h-64 bg-primary shrink-0 mt-2" />
-            <motion.h1 variants={itemVariants} className="text-5xl sm:text-8xl md:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase">
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl sm:text-8xl md:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase"
+            >
               Daniel <br />
               <span className="stroke">Cimring</span>
             </motion.h1>
@@ -58,7 +69,10 @@ const Hero = () => (
           {/* Spacer matching the four <br/> elements this replaced (4 x 24px line-height) */}
           <div className="h-24" aria-hidden="true" />
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-10 items-center"
+          >
             <a
               href={`mailto:${email}`}
               className="px-10 py-5 bg-primary text-on-primary font-display font-black text-base uppercase tracking-tighter hover:bg-white transition-colors"
@@ -66,10 +80,22 @@ const Hero = () => (
               Start a Conversation
             </a>
             <div className="flex gap-8">
-              <a href={socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-on-surface hover:text-primary transition-colors">
+              <a
+                href={socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="text-on-surface hover:text-primary transition-colors"
+              >
                 <Github size={28} />
               </a>
-              <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-on-surface hover:text-primary transition-colors">
+              <a
+                href={socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-on-surface hover:text-primary transition-colors"
+              >
                 <Linkedin size={28} />
               </a>
             </div>
@@ -82,7 +108,11 @@ const Hero = () => (
             className="w-full aspect-[3/4] bg-surface-container-high relative overflow-hidden"
           >
             <picture>
-              <source type="image/webp" srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w" sizes="(min-width: 1024px) 30vw, 85vw" />
+              <source
+                type="image/webp"
+                srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w"
+                sizes="(min-width: 1024px) 30vw, 85vw"
+              />
               <img
                 src="/daniel-960.jpg"
                 alt="Daniel Cimring"
@@ -94,8 +124,12 @@ const Hero = () => (
             </picture>
             <div className="absolute inset-0 border-[20px] border-primary/20 pointer-events-none" />
             <div className="absolute bottom-0 right-0 bg-primary p-8">
-              <div className="text-xs font-display font-black text-on-primary uppercase tracking-[0.3em] mb-2">Focus 2026</div>
-              <div className="text-xl font-display font-black text-on-primary uppercase tracking-tighter">AI Agents</div>
+              <div className="text-xs font-display font-black text-on-primary uppercase tracking-[0.3em] mb-2">
+                Focus 2026
+              </div>
+              <div className="text-xl font-display font-black text-on-primary uppercase tracking-tighter">
+                AI Agents
+              </div>
             </div>
           </motion.div>
         </div>
@@ -104,11 +138,12 @@ const Hero = () => (
 
     <div className="absolute bottom-12 right-12 hidden md:block">
       <div className="flex flex-col items-center gap-6">
-        <span className="text-[10px] font-display font-black text-primary uppercase tracking-[0.5em] [writing-mode:vertical-lr]">Scroll</span>
+        <span className="text-[10px] font-display font-black text-primary uppercase tracking-[0.5em] [writing-mode:vertical-lr]">
+          Scroll
+        </span>
         <div className="w-1 h-24 bg-gradient-to-b from-primary to-transparent" />
       </div>
     </div>
-
   </section>
 );
 

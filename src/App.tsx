@@ -15,7 +15,9 @@ function App() {
         <Hero />
 
         <ImpactBlock>
-          "My journey began as a child with an early computer and a love for code. Today I’m still driven by that same goal of creating meaningful solutions that are a joy to use."
+          "My journey began as a child with an early computer and a love for
+          code. Today I’m still driven by that same goal of creating meaningful
+          solutions that are a joy to use."
         </ImpactBlock>
 
         <Experience />
