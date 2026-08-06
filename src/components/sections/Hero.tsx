@@ -49,11 +49,8 @@ const Hero = () => (
             </motion.h1>
           </div>
 
-          <br />
-          <br />
-          <br />
-          <br />
-
+          {/* Spacer matching the four <br/> elements this replaced (4 x 24px line-height) */}
+          <div className="h-24" aria-hidden="true" />
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
             <a
@@ -63,10 +60,10 @@ const Hero = () => (
               Start a Conversation
             </a>
             <div className="flex gap-8">
-              <a href={socials.github} target="_blank" className="text-on-surface hover:text-primary transition-colors">
+              <a href={socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-on-surface hover:text-primary transition-colors">
                 <Github size={28} />
               </a>
-              <a href={socials.linkedin} target="_blank" className="text-on-surface hover:text-primary transition-colors">
+              <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-on-surface hover:text-primary transition-colors">
                 <Linkedin size={28} />
               </a>
             </div>

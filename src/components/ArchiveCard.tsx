@@ -26,7 +26,8 @@ const ArchiveCard = ({
         color: "var(--color-background)"
       }}
       className={cn(
-        "p-10 h-full flex flex-col border-l-4 group cursor-pointer",
+        "p-10 h-full flex flex-col border-l-4 group",
+        href ? "cursor-pointer" : "cursor-default",
         isLight
           ? "bg-primary border-primary text-background"
           : "bg-surface-container border-primary text-on-surface"
@@ -54,10 +55,13 @@ const ArchiveCard = ({
         )}>
           {tags.join(" / ")}
         </span>
-        <ChevronRight size={24} className={cn(
-          "transition-all duration-500 transform group-hover:translate-x-2",
-          isLight ? "text-background" : "text-primary group-hover:text-background"
-        )} />
+        {/* Arrow only on linked cards — it signals clickability */}
+        {href && (
+          <ChevronRight size={24} className={cn(
+            "transition-all duration-500 transform group-hover:translate-x-2",
+            isLight ? "text-background" : "text-primary group-hover:text-background"
+          )} />
+        )}
       </div>
     </motion.div>
   );

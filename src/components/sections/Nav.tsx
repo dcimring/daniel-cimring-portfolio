@@ -47,6 +47,8 @@ const Nav = () => {
             onClick={toggleMenu}
             className="sm:hidden p-2 text-on-surface/60 hover:text-primary transition-colors"
             aria-label="Toggle Menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -56,6 +58,7 @@ const Nav = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
