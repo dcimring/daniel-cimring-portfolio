@@ -1,22 +1,23 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
-import { 
-  Github, 
-  Linkedin, 
-  ExternalLink, 
-  Terminal, 
-  Cpu, 
-  BarChart3, 
-  Bitcoin,
+import {
+  Github,
+  Linkedin,
+  ExternalLink,
   ChevronRight,
-  Code2,
-  Database,
-  Globe,
   Menu,
   X,
   type LucideIcon
 } from "lucide-react";
 import { cn } from "./lib/utils";
+import { email, navLinks, socials } from "./data/site";
+import { experience } from "./data/experience";
+import { projects } from "./data/projects";
+import { skills } from "./data/skills";
+import { articles } from "./data/articles";
+
+/** Derives the "01"-style card index from array position. */
+const cardIndex = (i: number) => String(i + 1).padStart(2, "0");
 
 const ArchiveCard = ({ 
   index, 
@@ -170,12 +171,7 @@ function App() {
           <div className="flex gap-10 items-center">
             {/* Desktop Links */}
             <div className="hidden sm:flex gap-10 items-center text-[10px] md:text-xs font-display font-black uppercase tracking-widest">
-              {[
-                { name: "Experience", href: "#work" },
-                { name: "Projects", href: "#projects" },
-                { name: "Technologies", href: "#stack" },
-                { name: "Journal", href: "#insights" }
-              ].map((link) => (
+              {navLinks.map((link) => (
                 <a 
                   key={link.name}
                   href={link.href} 
@@ -188,7 +184,7 @@ function App() {
                   {link.name}
                 </a>
               ))}
-              <a href="mailto:dcimring@gmail.com" className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors">Connect</a>
+              <a href={`mailto:${email}`} className="bg-primary text-on-primary px-6 py-3 hover:bg-white transition-colors">Connect</a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -211,12 +207,7 @@ function App() {
               className="absolute top-24 left-0 w-full bg-surface-container-low border-b border-outline-variant/10 p-10 sm:hidden z-40"
             >
               <div className="flex flex-col gap-10 font-display text-lg font-black uppercase tracking-tighter">
-                {[
-                  { name: "Experience", href: "#work" },
-                  { name: "Projects", href: "#projects" },
-                  { name: "Technologies", href: "#stack" },
-                  { name: "Journal", href: "#insights" }
-                ].map((link) => (
+                {navLinks.map((link) => (
                   <a 
                     key={link.name}
                     href={link.href} 
@@ -231,8 +222,8 @@ function App() {
                     <ChevronRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all" />
                   </a>
                 ))}
-                <a 
-                  href="mailto:dcimring@gmail.com" 
+                <a
+                  href={`mailto:${email}`}
                   className="mt-6 w-full py-5 bg-primary text-on-primary text-center hover:bg-white transition-all"
                 >
                   Connect
@@ -297,17 +288,17 @@ function App() {
 
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-10 items-center">
-                  <a 
-                    href="mailto:dcimring@gmail.com" 
+                  <a
+                    href={`mailto:${email}`}
                     className="px-10 py-5 bg-primary text-on-primary font-display font-black text-base uppercase tracking-tighter hover:bg-white transition-colors"
                   >
                     Start a Conversation
                   </a>
                   <div className="flex gap-8">
-                    <a href="https://github.com/dcimring" target="_blank" className="text-on-surface hover:text-primary transition-colors">
+                    <a href={socials.github} target="_blank" className="text-on-surface hover:text-primary transition-colors">
                       <Github size={28} />
                     </a>
-                    <a href="https://www.linkedin.com/in/danielcimring/" target="_blank" className="text-on-surface hover:text-primary transition-colors">
+                    <a href={socials.linkedin} target="_blank" className="text-on-surface hover:text-primary transition-colors">
                       <Linkedin size={28} />
                     </a>
                   </div>
@@ -363,43 +354,9 @@ function App() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 border-t border-outline-variant/10">
-              <ArchiveCard 
-                index="01"
-                title="AI-Driven Building"
-                description="Leveraging LLMs, AI coding agents, and automation to develop new products and services."
-                tags={["AI Agents", "Efficiency", "Automation"]}
-                variant="light"
-              />
-              <ArchiveCard 
-                index="02"
-                title="Founder & CEO"
-                description="Founded and scaled a mobile social network in South Africa, optimizing for low-bandwidth environments, constrained handsets, and localized community engagement."
-                tags={["Entrepreneurship", "Strategy", "Growth"]}
-              />
-              <ArchiveCard 
-                index="03"
-                title="Online Gaming"
-                description="Product management and new product development for a world leading online gaming company."
-                tags={["Product", "Usability", "Financial Analysis"]}
-              />
-              <ArchiveCard 
-                index="04"
-                title="Hotels & Resorts"
-                description="Built a system for rewarding high value clients and tracking spend, involved with new product development and quantitative services."
-                tags={["Product", "Quantitative Analysis", "Data"]}
-              />
-              <ArchiveCard 
-                index="05"
-                title="Bitcoin Evangelist"
-                description="Was an early Bitcoin evangelist among friends and family. Developed custom Python tools for tracking, analysis and backtesting."
-                tags={["Data Analysis", "Python", "Bitcoin"]}
-              />
-              <ArchiveCard 
-                index="06"
-                title="Consulting"
-                description="Consultant to the board of directors during the build and deployment of a large casino resort project, and to a private company doing new product development."
-                tags={["Consulting", "Project Management"]}
-              />
+              {experience.map((item, i) => (
+                <ArchiveCard key={item.title} index={cardIndex(i)} {...item} />
+              ))}
             </div>
           </div>
         </section>
@@ -420,88 +377,9 @@ function App() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 border-t border-outline-variant/10">
-              <ArchiveCard 
-                index="01"
-                title="Sentinel58"
-                description="Real-time threat and incident matrix that continuously scans centralized and decentralized markets for exploits, depegs, sanctions, and liquidity shocks."
-                href="https://www.sentinel58.com"
-                tags={["Crypto", "Risk", "SaaS"]}
-                variant="light"
-              />
-              <ArchiveCard 
-                index="02"
-                title="Cayman Cup"
-                description="Tournament platform for the Vanta Black Water Cayman Cup, showcasing team rosters, live standings, match results, and bracket play in Grand Cayman."
-                href="https://caymancup.ky"
-                tags={["HTML", "Sports", "Pickleball"]}
-              />
-              <ArchiveCard 
-                index="03"
-                title="Idea Validator"
-                description="Platform to manage and validate startup ideas via personalized feedback links and industry insights."
-                href="https://ideas.danielcimring.com"
-                tags={["React", "Feedback", "SaaS"]}
-              />
-              <ArchiveCard 
-                index="04"
-                title="Closing Agent"
-                description="Unified real estate closing dashboard synchronizing all parties through automated workflows, transparent document management, and real-time deadline tracking."
-                tags={["AI", "Python", "Data"]}
-                href="https://closing-agent.pages.dev"
-              />
-              <ArchiveCard 
-                index="05"
-                title="Corporate League"
-                description="WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data."
-                href="https://www.corpleague.xyz/matches"
-                tags={["WP", "Automation", "Discord"]}
-              />
-              <ArchiveCard 
-                index="06"
-                title="DinkDash"
-                description="Community site for tracking pickleball rankings and player statistics. A hub for the local scene."
-                href="https://dinkdash.xyz"
-                tags={["React", "Stats", "Pickleball"]}
-              />
-              <ArchiveCard 
-                index="07"
-                title="Finance AI"
-                description="Local-first AI dashboard for bank statements. Instant insights into spending patterns with zero setup."
-                tags={["AI", "Privacy", "Finance"]}
-              />
-              <ArchiveCard 
-                index="08"
-                title="Trade Pilot"
-                description="Portfolio tracking tool with thesis documentation that syncs with brokerages and exchanges."
-                tags={["Finance", "Portfolio", "SaaS"]}
-              />
-              <ArchiveCard 
-                index="09"
-                title="Alpha Terminal"
-                description="Tracks public Twitter handles to detect buy/sell signals and build performance track records over time."
-                href="https://tweet-alpha.vercel.app"
-                tags={["AI", "Twitter", "Trading"]}
-              />
-              <ArchiveCard 
-                index="10"
-                title="Cayman Property AI"
-                description="AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation."
-                tags={["AI", "Python", "Data"]}
-              />
-              <ArchiveCard 
-                index="11"
-                title="GazettePulse Regulations"
-                description="Free regulatory knowledgebase and searchable library of Acts, Regulations, Rules, and guidance for offshore financial services regulators across Cayman, BVI, Bermuda, Jersey & Guernsey."
-                href="https://gazettepulse.com/regulations/"
-                tags={["AI", "Law", "Compliance"]}
-              />
-              <ArchiveCard 
-                index="12"
-                title="Schooner"
-                description="The Caribbean labour rail — agentic infrastructure that moves the region's workers into the region's jobs. Entry for the FutureCaribbean Buildathon."
-                href="https://deck.caribbean.work"
-                tags={["AI", "Labor", "Infrastructure"]}
-              />
+              {projects.map((item, i) => (
+                <ArchiveCard key={item.title} index={cardIndex(i)} {...item} />
+              ))}
             </div>
           </div>
         </section>
@@ -533,22 +411,9 @@ function App() {
               }}
               className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0"
             >
-              <SkillBadge name="Python" icon={Terminal} />
-              <SkillBadge name="React / TS" icon={Code2} />
-              <SkillBadge name="Bitcoin" icon={Bitcoin} />
-              <SkillBadge name="Data Analysis" icon={BarChart3} />
-              <SkillBadge name="Architecture" icon={Cpu} />
-              <SkillBadge name="AI Coding" icon={Terminal} />
-              <SkillBadge name="Supabase" icon={Database} />
-              <SkillBadge name="Vite" icon={Globe} />
-              <SkillBadge name="System Design" icon={Cpu} />
-              <SkillBadge name="Finance" icon={BarChart3} />
-              <SkillBadge name="Node.js" icon={Terminal} />
-              <SkillBadge name="Tailwind" icon={Code2} />
-              <SkillBadge name="Cloud Run" icon={Globe} />
-              <SkillBadge name="Google Apps Script" icon={Code2} />
-              <SkillBadge name="Vercel" icon={Globe} />
-              <SkillBadge name="Convex" icon={Database} />
+              {skills.map((skill) => (
+                <SkillBadge key={skill.name} name={skill.name} icon={skill.icon} />
+              ))}
             </motion.div>
           </div>
         </section>
@@ -584,12 +449,7 @@ function App() {
                 }}
                 className="space-y-0"
               >
-                {[
-                  { title: "Bitcoin Price Exploration: Why Most People Shouldn't Trade It", link: "https://medium.com/@danielcimring/bitcoin-price-analysis-part-1-d6e961249b40" },
-                  { title: "Dollar Cost Averaging — Does It Really Work? Bitcoin Case Study", link: "https://medium.com/coinmonks/dollar-cost-averaging-does-it-really-work-bitcoin-case-study-e29e02e24ffc" },
-                  { title: "A strategy for trading ETH to make more BTC", link: "https://medium.com/coinmonks/a-strategy-for-trading-eth-to-make-more-btc-3985c3c93c04" },
-                  { title: "Downloading historical data from Coinmarketcap using Python", link: "https://medium.com/coinmonks/downloading-historical-data-from-coinmarketcap-41a2b0111baf" }
-                ].map((article, i) => (
+                {articles.map((article, i) => (
                   <motion.a 
                     key={i}
                     href={article.link}
@@ -614,9 +474,9 @@ function App() {
                 ))}
               </motion.div>
               <div className="mt-20">
-                <a 
-                  href="https://medium.com/@danielcimring" 
-                  target="_blank" 
+                <a
+                  href={socials.medium}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 text-xs font-display font-black text-primary uppercase tracking-[0.3em] group"
                 >
@@ -639,10 +499,10 @@ function App() {
               <span className="text-xs font-display font-black uppercase tracking-[0.4em] text-on-surface/40">Daniel Cimring // 2026</span>
             </div>
             <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 text-[10px] font-display font-black uppercase tracking-[0.3em] text-on-surface/40">
-              <a href="https://github.com/dcimring" target="_blank" className="hover:text-primary transition-colors">Github</a>
-              <a href="https://www.linkedin.com/in/danielcimring/" target="_blank" className="hover:text-primary transition-colors">Linkedin</a>
-              <a href="https://medium.com/@danielcimring" target="_blank" className="hover:text-primary transition-colors">Medium</a>
-              <a href="mailto:dcimring@gmail.com" className="hover:text-primary transition-colors">Email</a>
+              <a href={socials.github} target="_blank" className="hover:text-primary transition-colors">Github</a>
+              <a href={socials.linkedin} target="_blank" className="hover:text-primary transition-colors">Linkedin</a>
+              <a href={socials.medium} target="_blank" className="hover:text-primary transition-colors">Medium</a>
+              <a href={`mailto:${email}`} className="hover:text-primary transition-colors">Email</a>
             </div>
           </div>
         </footer>
