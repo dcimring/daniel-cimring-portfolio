@@ -497,9 +497,9 @@ function App() {
               />
               <ArchiveCard 
                 index="12"
-                title="Tradewind"
+                title="Schooner"
                 description="The Caribbean labour rail — agentic infrastructure that moves the region's workers into the region's jobs. Entry for the FutureCaribbean Buildathon."
-                href="https://caribbean.work"
+                href="https://deck.caribbean.work"
                 tags={["AI", "Labor", "Infrastructure"]}
               />
             </div>
