@@ -24,14 +24,6 @@
   --radius-full: 0px;
 }
 
-@utility kinetic-gradient {
-  background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dim));
-}
-
-@utility border-text-stroke {
-  -webkit-text-stroke: 1px var(--color-on-surface);
-}
-
 @utility glass-morphism {
   background-color: rgba(19, 19, 19, 0.8);
   backdrop-filter: blur(20px);

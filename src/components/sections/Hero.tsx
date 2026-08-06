@@ -28,11 +28,17 @@ const Hero = () => (
             className="block lg:hidden w-[85%] ml-auto mb-10 md:mb-12 relative"
           >
             <div className="aspect-square bg-surface-container-high relative overflow-hidden">
-              <img
-                src="/daniel.jpg"
-                alt="Daniel Cimring"
-                className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-100"
-              />
+              <picture>
+                <source type="image/webp" srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w" sizes="(min-width: 1024px) 30vw, 85vw" />
+                <img
+                  src="/daniel-960.jpg"
+                  alt="Daniel Cimring"
+                  width={854}
+                  height={960}
+                  fetchPriority="high"
+                  className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-100"
+                />
+              </picture>
               <div className="absolute inset-0 border-[10px] border-primary/20 pointer-events-none" />
               <div className="absolute bottom-0 right-0 bg-primary p-4">
                 <div className="text-[8px] font-display font-black text-on-primary uppercase tracking-[0.2em] mb-1">Focus 2026</div>
@@ -75,11 +81,17 @@ const Hero = () => (
             variants={itemVariants}
             className="w-full aspect-[3/4] bg-surface-container-high relative overflow-hidden"
           >
-            <img
-              src="/daniel.jpg"
-              alt="Daniel Cimring"
-              className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-85"
-            />
+            <picture>
+              <source type="image/webp" srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w" sizes="(min-width: 1024px) 30vw, 85vw" />
+              <img
+                src="/daniel-960.jpg"
+                alt="Daniel Cimring"
+                width={854}
+                height={960}
+                fetchPriority="high"
+                className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-85"
+              />
+            </picture>
             <div className="absolute inset-0 border-[20px] border-primary/20 pointer-events-none" />
             <div className="absolute bottom-0 right-0 bg-primary p-8">
               <div className="text-xs font-display font-black text-on-primary uppercase tracking-[0.3em] mb-2">Focus 2026</div>

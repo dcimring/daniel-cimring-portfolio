@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Inter:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { background: #0e0e0e; font-family: 'Lexend', sans-serif; position: relative; }
+  .bar { position: absolute; left: 64px; top: 120px; width: 16px; height: 260px; background: #fde400; }
+  .badge { position: absolute; left: 112px; top: 120px; background: #fde400; color: #0e0e0e; padding: 14px 26px; font-size: 20px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; }
+  .name { position: absolute; left: 108px; top: 190px; color: #fff; font-size: 110px; font-weight: 900; letter-spacing: -0.05em; line-height: 0.85; text-transform: uppercase; }
+  .name .stroke { color: transparent; -webkit-text-stroke: 3px #fff; }
+  .foot { position: absolute; left: 112px; bottom: 72px; color: rgba(255,255,255,0.45); font-size: 22px; font-weight: 900; letter-spacing: 0.35em; text-transform: uppercase; }
+  .photo { position: absolute; right: 0; top: 0; width: 400px; height: 630px; object-fit: cover; filter: grayscale(1) contrast(1.5); }
+  .photo-frame { position: absolute; right: 0; top: 0; width: 400px; height: 630px; border: 16px solid rgba(253,228,0,0.22); pointer-events: none; }
+  .photo-tag { position: absolute; right: 0; bottom: 0; background: #fde400; color: #0e0e0e; padding: 18px 26px; font-weight: 900; text-transform: uppercase; }
+  .photo-tag .k { font-size: 14px; letter-spacing: 0.3em; margin-bottom: 6px; }
+  .photo-tag .v { font-size: 24px; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <div class="badge">Entrepreneur &bull; Software Developer</div>
+  <div class="name">Daniel<br><span class="stroke">Cimring</span></div>
+  <div class="foot">danielcimring.com</div>
+  <img class="photo" src="./daniel-source.jpg">
+  <div class="photo-frame"></div>
+  <div class="photo-tag"><div class="k">Focus 2026</div><div class="v">AI Agents</div></div>
+</body>
+</html>
