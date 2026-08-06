@@ -60,3 +60,14 @@ Depth is achieved via **Tonal Stacking** rather than shadows.
 *   No Pastel Colors.
 *   No Thin Borders for sectioning.
 *   No Centered Body Text (Left-align for technical structure).
+
+## 7. Motion & Brand Assets
+
+### Motion
+*   Scroll animations replay on every pass (`viewport={{ once: false }}`) — this "kinetic" repetition is intentional; do not change to play-once.
+*   `prefers-reduced-motion` is honored globally via `<MotionConfig reducedMotion="user">` in `main.tsx` — no per-component handling needed.
+*   Only cards with links show the chevron arrow + pointer cursor; the hover color-flip belongs to every card.
+
+### Brand assets
+*   `public/favicon.svg` + `public/apple-touch-icon.png`: yellow bar + hollow white block on deep black — the nav mark plus the `.stroke` typography motif.
+*   `public/og.jpg`: 1200×630 branded link-preview card generated from `og-src/og.html` (regeneration commands in CONTENT.md). Keep it in-system: black void, yellow blocking, Lexend uppercase, B&W photo.

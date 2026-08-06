@@ -1,7 +1,9 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-This repository is a single-page portfolio built with Vite, React 19, TypeScript, Tailwind CSS v4, and Framer Motion. Application code lives in `src/`: `main.tsx` boots the app, `App.tsx` contains the main page sections, `index.css` defines theme tokens and global styles, and `lib/utils.ts` holds shared helpers such as `cn()`. Static files served as-is live in `public/`. Reference docs such as `ARCHITECTURE.md` and `DESIGN.md` sit at the repo root.
+This repository is a single-page portfolio built with Vite, React 19, TypeScript, Tailwind CSS v4, and Framer Motion. Application code lives in `src/`: `main.tsx` boots the app, `App.tsx` composes the section components from `src/components/sections/`, all site content lives in `src/data/*.ts`, `index.css` defines theme tokens and global styles, and `lib/utils.ts` holds shared helpers such as `cn()`. Static files served as-is live in `public/`; the source photo and OG-card template live in `og-src/` (not shipped). Reference docs sit at the repo root: `ARCHITECTURE.md` (structure), `CONTENT.md` (content-editing and deploy runbook), and `DESIGN.md` (visual rules).
+
+**Content edits** (adding a project, changing a link, etc.) belong in `src/data/` — follow `CONTENT.md` rather than editing components.
 
 ## Build, Test, and Development Commands
 - `npm install`: install dependencies.
@@ -9,8 +11,12 @@ This repository is a single-page portfolio built with Vite, React 19, TypeScript
 - `npm run build`: run TypeScript project checks and produce a production build in `dist/`.
 - `npm run preview`: serve the built output locally.
 - `npm run lint`: run ESLint across the repo.
+- `npm run format` / `npm run format:check`: Prettier write / check.
 
-Use `npm run lint && npm run build` before opening a PR.
+Use `npm run lint && npm run format:check && npm run build` before opening a PR. GitHub Actions CI runs the same checks on push and PR.
+
+## Deployment
+Pushing to `main` auto-deploys to https://danielcimring.com via the Vercel GitHub integration. Manual deploys: `npx vercel --prod` (see CONTENT.md). Do not add the `vercel` CLI to dependencies.
 
 ## Coding Style & Naming Conventions
 Follow the existing TypeScript and React patterns in `src/`. Use functional components, typed props, and utility-first styling with Tailwind classes. Keep component names in `PascalCase`, hooks and helpers in `camelCase`, and assets/files in descriptive lowercase names where practical. Existing source uses 2-space indentation in config files and semicolon-terminated TypeScript with double-quoted imports; match the surrounding file instead of reformatting unrelated code.

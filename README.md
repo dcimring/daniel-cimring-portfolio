@@ -12,7 +12,7 @@ A single-page portfolio built with React, TypeScript, Vite, and Tailwind CSS v4.
 
 ## Local Development
 
-Install dependencies and start the dev server:
+Requires Node 22+ (see `.nvmrc`). Install dependencies and start the dev server:
 
 ```bash
 npm install
@@ -24,25 +24,44 @@ The dev server runs with `--host`, which makes local device testing easier on th
 ## Available Scripts
 
 ```bash
-npm run dev      # start the Vite dev server
-npm run build    # type-check and build for production
-npm run preview  # preview the production build locally
-npm run lint     # run ESLint across the project
+npm run dev           # start the Vite dev server
+npm run build         # type-check and build for production
+npm run preview       # preview the production build locally
+npm run lint          # run ESLint across the project
+npm run format        # format the repo with Prettier
+npm run format:check  # check formatting without writing
 ```
 
-Use `npm run lint && npm run build` as the current validation step before shipping changes.
+Use `npm run lint && npm run format:check && npm run build` as the validation step before shipping changes. CI runs the same checks on every push and PR.
+
+## Editing Content
+
+All site content (project cards, experience, skills, journal articles, links) lives in `src/data/*.ts` — see **[CONTENT.md](CONTENT.md)** for the step-by-step runbook, including image regeneration and the OG card.
+
+## Deployment
+
+Hosted on Vercel as `daniel-cimring-portfolio`, live at **https://danielcimring.com**.
+
+- **Automatic:** pushing to `main` triggers a production deploy via the Vercel GitHub integration.
+- **Manual:** `npx vercel --prod` (run `npx vercel link` first on a fresh clone; the `.vercel/` link directory is gitignored).
 
 ## Project Structure
 
 ```text
 src/
-  App.tsx        main page layout and sections
-  main.tsx       React entry point
-  index.css      global styles, Tailwind theme tokens, utilities
-  lib/utils.ts   shared helpers such as cn()
+  App.tsx            ~30-line composition of sections
+  main.tsx           React entry point (+ reduced-motion config)
+  index.css          global styles, Tailwind theme tokens
+  types.ts           shared content types
+  data/              ALL site content (projects, experience, skills, ...)
+  components/        ArchiveCard, SkillBadge, ImpactBlock, motion variants
+  components/sections/  Nav, Hero, Experience, Projects, Stack, Insights, Footer
+  lib/utils.ts       cn(), cardIndex()
 
 public/          static assets served directly
+og-src/          source photo + OG-card template (not shipped)
 ARCHITECTURE.md  implementation notes and technical direction
+CONTENT.md       content-editing and deploy runbook
 DESIGN.md        visual system and design rules
 AGENTS.md        contributor workflow and repository guidelines
 ```
@@ -53,6 +72,6 @@ The visual system favors sharp edges, aggressive typography, tonal stacking, and
 
 ## Notes
 
-- There is currently no dedicated test runner configured.
-- Production output is generated in `dist/`.
+- There is currently no dedicated test runner configured; lint + typecheck + build are the gate.
+- Production output is generated in `dist/` (gitignored).
 - Keep changes aligned with the conventions documented in `AGENTS.md`.
