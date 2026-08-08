@@ -24,6 +24,13 @@ export const projects: CardItem[] = [
     tags: ["HTML", "Sports", "Pickleball"],
   },
   {
+    title: "Schooner",
+    description:
+      "The Caribbean labour rail — agentic infrastructure that moves the region's workers into the region's jobs. Entry for the FutureCaribbean Buildathon.",
+    href: "https://deck.caribbean.work",
+    tags: ["AI", "Labor", "Infrastructure"],
+  },
+  {
     title: "Idea Validator",
     description:
       "Platform to manage and validate startup ideas via personalized feedback links and industry insights.",
@@ -75,12 +82,5 @@ export const projects: CardItem[] = [
     description:
       "AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation.",
     tags: ["AI", "Python", "Data"],
-  },
-  {
-    title: "Schooner",
-    description:
-      "The Caribbean labour rail — agentic infrastructure that moves the region's workers into the region's jobs. Entry for the FutureCaribbean Buildathon.",
-    href: "https://deck.caribbean.work",
-    tags: ["AI", "Labor", "Infrastructure"],
   },
 ];
