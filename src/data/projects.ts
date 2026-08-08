@@ -83,4 +83,11 @@ export const projects: CardItem[] = [
       "AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation.",
     tags: ["AI", "Python", "Data"],
   },
+  {
+    title: "Ruby Cimring",
+    description:
+      "Personal site for my daughter Ruby — a photo timeline, adventures, the things she makes, and a guestbook visitors can sign. She runs it herself now.",
+    href: "https://rubycimring.com",
+    tags: ["HTML", "Family", "Personal Site"],
+  },
 ];
