@@ -4,7 +4,7 @@ export const projects: CardItem[] = [
   {
     title: "GazettePulse Regulations",
     description:
-      "Free regulatory knowledgebase and searchable library of Acts, Regulations, Rules, and guidance for offshore financial services regulators across Cayman, BVI, Bermuda, Jersey & Guernsey.",
+      "Regulatory knowledgebase and searchable library of Acts, Regulations, Rules, and guidance for offshore financial services regulators across Cayman, BVI, Bermuda, Jersey & Guernsey.",
     href: "https://gazettepulse.com/regulations/",
     tags: ["AI", "Law", "Compliance"],
     variant: "light",
