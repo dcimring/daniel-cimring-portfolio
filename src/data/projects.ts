@@ -2,12 +2,19 @@ import type { CardItem } from "../types";
 
 export const projects: CardItem[] = [
   {
+    title: "GazettePulse Regulations",
+    description:
+      "Free regulatory knowledgebase and searchable library of Acts, Regulations, Rules, and guidance for offshore financial services regulators across Cayman, BVI, Bermuda, Jersey & Guernsey.",
+    href: "https://gazettepulse.com/regulations/",
+    tags: ["AI", "Law", "Compliance"],
+    variant: "light",
+  },
+  {
     title: "Sentinel58",
     description:
       "Real-time threat and incident matrix that continuously scans centralized and decentralized markets for exploits, depegs, sanctions, and liquidity shocks.",
     href: "https://www.sentinel58.com",
     tags: ["Crypto", "Risk", "SaaS"],
-    variant: "light",
   },
   {
     title: "Cayman Cup",
@@ -68,13 +75,6 @@ export const projects: CardItem[] = [
     description:
       "AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation.",
     tags: ["AI", "Python", "Data"],
-  },
-  {
-    title: "GazettePulse Regulations",
-    description:
-      "Free regulatory knowledgebase and searchable library of Acts, Regulations, Rules, and guidance for offshore financial services regulators across Cayman, BVI, Bermuda, Jersey & Guernsey.",
-    href: "https://gazettepulse.com/regulations/",
-    tags: ["AI", "Law", "Compliance"],
   },
   {
     title: "Schooner",
