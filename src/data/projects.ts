@@ -4,7 +4,7 @@ export const projects: CardItem[] = [
   {
     title: "GazettePulse Regulations",
     description:
-      "Regulatory knowledgebase and searchable library of Acts, Regulations, Rules, and guidance for offshore financial services regulators across Cayman, BVI, Bermuda, Jersey & Guernsey.",
+      "A searchable library of the Acts, Regulations, Rules and guidance that offshore regulators publish, covering Cayman, BVI, Bermuda, Jersey and Guernsey. Ask it a question and it points you at the source.",
     href: "https://gazettepulse.com/regulations/",
     tags: ["AI", "Law", "Compliance"],
     variant: "light",
@@ -12,7 +12,7 @@ export const projects: CardItem[] = [
   {
     title: "Sentinel58",
     description:
-      "Real-time threat and incident matrix that continuously scans centralized and decentralized markets for exploits, depegs, sanctions, and liquidity shocks.",
+      "Watches crypto markets, centralised and decentralised, for exploits, depegs, sanctions and liquidity shocks, and flags them as they happen.",
     href: "https://www.sentinel58.com",
     tags: ["Crypto", "Risk", "SaaS"],
   },
@@ -26,7 +26,7 @@ export const projects: CardItem[] = [
   {
     title: "Schooner",
     description:
-      "The Caribbean labour rail — agentic infrastructure that moves the region's workers into the region's jobs. Entry for the FutureCaribbean Buildathon.",
+      "Matches workers across the Caribbean with jobs in the region and uses AI agents to handle the steps in between. Built for the FutureCaribbean Buildathon.",
     href: "https://deck.caribbean.work",
     tags: ["AI", "Labor", "Infrastructure"],
   },
@@ -40,14 +40,14 @@ export const projects: CardItem[] = [
   {
     title: "Closing Agent",
     description:
-      "Unified real estate closing dashboard synchronizing all parties through automated workflows, transparent document management, and real-time deadline tracking.",
+      "One dashboard for a property closing. Keeps buyer, seller, agents and lawyers on the same page with shared documents and deadline tracking.",
     href: "https://closing-agent.pages.dev",
     tags: ["AI", "Python", "Data"],
   },
   {
     title: "Corporate League",
     description:
-      "WordPress plugin for Pickleball Cayman. Automates leaderboards and status reports from Excel data.",
+      "WordPress plugin for Pickleball Cayman that turns the league’s Excel sheet into live leaderboards and status reports.",
     href: "https://www.corpleague.xyz/matches",
     tags: ["WP", "Automation", "Discord"],
   },
@@ -80,7 +80,7 @@ export const projects: CardItem[] = [
   {
     title: "Cayman Property AI",
     description:
-      "AI-assisted search for Cayman real estate. Creates dashboards from property data with future plans for ROI estimation.",
+      "Search Cayman property listings in plain English and get a dashboard back. ROI estimates are next.",
     tags: ["AI", "Python", "Data"],
   },
   {

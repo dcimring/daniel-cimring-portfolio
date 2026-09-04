@@ -3,29 +3,33 @@ import Hero from "./components/sections/Hero";
 import Experience from "./components/sections/Experience";
 import Projects from "./components/sections/Projects";
 import Stack from "./components/sections/Stack";
-import Insights from "./components/sections/Insights";
+import Writing from "./components/sections/Writing";
 import Footer from "./components/sections/Footer";
 import ImpactBlock from "./components/ImpactBlock";
+import { impactQuote } from "./data/site";
 
 function App() {
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-background font-sans bg-background text-on-surface overflow-x-hidden">
+    <div
+      id="top"
+      className="min-h-screen selection:bg-primary selection:text-background font-sans bg-background text-on-surface overflow-x-hidden"
+    >
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 bg-primary text-background px-6 py-3 font-display font-black uppercase tracking-widest text-xs"
+      >
+        Skip to content
+      </a>
       <Nav />
-      <main>
+      <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
-
-        <ImpactBlock>
-          "My journey began as a child with an early computer and a love for
-          code. Today I’m still driven by that same goal of creating meaningful
-          solutions that are a joy to use."
-        </ImpactBlock>
-
+        <ImpactBlock quote={impactQuote} />
         <Experience />
         <Projects />
         <Stack />
-        <Insights />
-        <Footer />
+        <Writing />
       </main>
+      <Footer />
     </div>
   );
 }

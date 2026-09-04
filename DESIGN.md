@@ -42,19 +42,32 @@ Traditional 1px borders are strictly prohibited for sectioning. Boundaries are c
 
 Depth is achieved via **Tonal Stacking** rather than shadows.
 
-- **Ghost Border Fallback**: Use `#484848` at 20% opacity only when essential for accessibility (e.g., inputs).
+- **Ghost Border Fallback**: Use `#484848` at 20% opacity only when essential for accessibility (e.g., inputs). Never add an opacity modifier on top of it — `/10` compounds to ~2% and the line vanishes.
+- **Section boundaries** come from alternating `background` / `surface-container-low` and the full-bleed yellow Impact block. There are no sectioning borders anywhere in the page.
 - **Border-Text-Stroke**: Use for "hollow" text effects on large display type to reduce visual weight while maintaining impact.
 
 ## 5. Components
 
 ### Buttons
 
-- **Primary**: Solid Athletic Yellow, black uppercase Lexend, 0px radius.
-- **Hover States**: Transition to white or dim yellow.
+- **Primary** (`CtaLink`): Kinetic Gradient over a white base, black uppercase Lexend, 0px radius. Hover fades the gradient out to reveal white.
+
+### Section headings (`SectionHeading`)
+
+- Every section opens with a yellow eyebrow `01 / WORK` (numbered from nav order) and a two-line Lexend headline whose lines rise out of a clip. One motif, four layouts — never reuse a variant twice on the same page:
+  - `reveal` (Work): left-aligned, line 2 hollow.
+  - `bleed-right` (Projects): right-aligned, hollow line runs off the right edge.
+  - `offset` (Stack): line 2 stepped in, hollow in yellow.
+  - `bar` (Writing): line 1 on a yellow block that wipes in.
+
+### Cards, cells, rows
+
+- Hover is a **wipe**, not a fade: a yellow layer scales in from the left rail (white on the yellow featured card). Text flips colour with it. Numerals lift, titles nudge right, arrows slide.
+- Grids are tonal slabs with 4px black seams (`gap-1`); the Stack slab is gapless with a two-tone checker. No orphan cells: the first project is featured full-width, and skill counts stay a multiple of 4.
 
 ### Impact Blocks
 
-- Full-width Athletic Yellow containers with large black Lexend type. Used to break up monochromatic sections.
+- Full-width Athletic Yellow containers with large black Lexend type, a black rail on the left, words rising in one by one. Used to break up monochromatic sections. Always left-aligned.
 
 ### Imagery
 
@@ -79,11 +92,21 @@ Depth is achieved via **Tonal Stacking** rather than shadows.
 
 ### Motion
 
-- Scroll animations replay on every pass (`viewport={{ once: false }}`) — this "kinetic" repetition is intentional; do not change to play-once.
-- `prefers-reduced-motion` is honored globally via `<MotionConfig reducedMotion="user">` in `main.tsx` — no per-component handling needed.
-- Only cards with links show the chevron arrow + pointer cursor; the hover color-flip belongs to every card.
+- The hero runs a choreographed entrance on mount (badge → name lines → tagline → CTAs → portrait curtain → focus tag), then parallaxes gently on scroll (portrait down, name up, scroll cue fades). It is the one place motion is allowed to be a set piece.
+- Scroll animations elsewhere replay on every pass (`viewport={{ once: false }}`) — this "kinetic" repetition is intentional; do not change to play-once.
+- Page-wide devices: a 3px yellow scroll-progress line under the nav, and the active section's numeral + underline in the nav.
+- Only transforms and opacity animate. Hover colour changes are CSS transitions; the moving part is always a wipe layer.
+- The Stack marquee is the page's one marquee and its one CSS keyframe animation; it carries its own `prefers-reduced-motion` rule.
+- `prefers-reduced-motion` is honored globally via `<MotionConfig reducedMotion="user">` in `main.tsx`; infinite loops (scroll cue) additionally check `useReducedMotion()`.
+- Only cards with links show the chevron arrow + pointer cursor; the hover wipe belongs to every card.
+
+### Accessibility floor
+
+- Smallest type is 11px; text on dark surfaces is never below `/60` opacity. Text under 24px on yellow is `text-background`, not `on-primary`.
+- Every hover has a visible resting state (touch devices never see `hover:`).
+- Keyboard focus is a 3px square yellow ring (black on yellow). There is a skip link, and anchors land below the nav via `scroll-margin-top`.
 
 ### Brand assets
 
 - `public/favicon.svg` + `public/apple-touch-icon.png`: yellow bar + hollow white block on deep black — the nav mark plus the `.stroke` typography motif.
-- `public/og.jpg`: 1200×630 branded link-preview card generated from `og-src/og.html` (regeneration commands in CONTENT.md). Keep it in-system: black void, yellow blocking, Lexend uppercase, B&W photo.
+- `public/og.jpg`: 1200×630 branded link-preview card generated from `og-src/og.html` (regeneration commands in CONTENT.md). Keep it in-system: black void, yellow blocking, Lexend uppercase, B&W photo. Its badge text must match `hero.eyebrow` in `src/data/site.ts`.

@@ -2,40 +2,40 @@ import type { CardItem } from "../types";
 
 export const experience: CardItem[] = [
   {
-    title: "AI-Driven Building",
+    title: "Building with AI agents",
     description:
-      "Leveraging LLMs, AI coding agents, and automation to develop new products and services.",
+      "Most of the projects below were built with AI coding agents, usually by one person. I spend my time deciding what to build and checking the work, not typing it out.",
     tags: ["AI Agents", "Efficiency", "Automation"],
     variant: "light",
   },
   {
     title: "Founder & CEO",
     description:
-      "Founded and scaled a mobile social network in South Africa, optimizing for low-bandwidth environments, constrained handsets, and localized community engagement.",
+      "Started and ran a mobile social network in South Africa. It had to work on cheap handsets over slow connections, so most of the work was making it fast and keeping the community healthy.",
     tags: ["Entrepreneurship", "Strategy", "Growth"],
   },
   {
-    title: "Online Gaming",
+    title: "Product Manager, Online Gaming",
     description:
-      "Product management and new product development for a world leading online gaming company.",
+      "Ran product management and new product development for one of the biggest online gaming companies. Usability testing, financial modelling, and deciding what to build next.",
     tags: ["Product", "Usability", "Financial Analysis"],
   },
   {
     title: "Hotels & Resorts",
     description:
-      "Built a system for rewarding high value clients and tracking spend, involved with new product development and quantitative services.",
+      "Built the system that tracked spend and rewarded high-value guests for a hotel and casino group, and worked on new product and quantitative projects alongside it.",
     tags: ["Product", "Quantitative Analysis", "Data"],
   },
   {
-    title: "Bitcoin Evangelist",
+    title: "Bitcoin",
     description:
-      "Was an early Bitcoin evangelist among friends and family. Developed custom Python tools for tracking, analysis and backtesting.",
+      "Got into Bitcoin early and wrote Python tools to track prices, backtest strategies and pull exchange data. Some of that turned into the articles below.",
     tags: ["Data Analysis", "Python", "Bitcoin"],
   },
   {
     title: "Consulting",
     description:
-      "Consultant to the board of directors during the build and deployment of a large casino resort project, and to a private company doing new product development.",
+      "Advised the board during the build and opening of a large casino resort, and helped a private company with new product development.",
     tags: ["Consulting", "Project Management"],
   },
 ];

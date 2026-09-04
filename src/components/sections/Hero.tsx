@@ -1,38 +1,117 @@
-import { motion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
-import { email, socials } from "../../data/site";
-import { containerVariants, itemVariants } from "../motion";
+import { email, hero, socials } from "../../data/site";
+import CtaLink from "../CtaLink";
+import {
+  curtainVariants,
+  heroContainerVariants,
+  itemVariants,
+  lineRevealVariants,
+} from "../motion";
 
-const Hero = () => (
-  <section className="min-h-screen flex items-center pt-32 pb-12 md:pb-20 relative overflow-hidden bg-background">
-    <div className="container mx-auto px-8 relative z-10">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={containerVariants}
-        className="grid lg:grid-cols-12 gap-0 items-stretch"
-      >
-        <div className="lg:col-span-8 flex flex-col justify-center">
-          <motion.div variants={itemVariants} className="mb-8 md:mb-10">
-            <div className="inline-block bg-primary px-6 py-3">
-              <span className="font-display text-sm font-black text-on-primary uppercase tracking-[0.2em]">
-                Entrepreneur • Software Developer
-              </span>
-            </div>
-          </motion.div>
+/**
+ * Mount-animated (not scroll-triggered) so the hero is never invisible in a
+ * background tab or a prerender. Parallax MotionValues live on outer wrappers
+ * and entrance variants on inner ones — a single element can't have both.
+ * The portrait is never faded: it's painted at full opacity under a curtain,
+ * so it still counts as the LCP element.
+ */
+const Hero = () => {
+  const reduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const portraitY = useTransform(scrollY, [0, 700], [0, 90]);
+  const nameY = useTransform(scrollY, [0, 700], [0, -40]);
+  const cueOpacity = useTransform(scrollY, [0, 240], [1, 0]);
+  const year = new Date().getFullYear();
 
-          {/* Option 1: Mobile Asymmetric Editorial Inset */}
+  return (
+    <section className="min-h-screen flex items-center pt-32 lg:pt-28 pb-12 md:pb-20 relative overflow-hidden bg-background">
+      <div className="shell w-full relative z-10">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={heroContainerVariants}
+          className="grid grid-cols-1 lg:grid-cols-12 items-center"
+        >
+          <div className="min-w-0 relative z-20 lg:col-start-1 lg:col-end-9 lg:row-start-1">
+            <motion.div variants={itemVariants} className="mb-8 md:mb-10">
+              <div className="inline-block bg-primary px-6 py-3">
+                <span className="font-display text-sm font-black text-on-primary uppercase tracking-[0.2em]">
+                  {hero.eyebrow}
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              style={{ y: nameY }}
+              className="flex gap-6 md:gap-10 items-start mb-8 md:mb-10 will-change-transform"
+            >
+              <div className="w-2 self-stretch bg-primary shrink-0 mt-1" />
+              <h1 className="text-[clamp(3.5rem,min(12vw,15vh),8.5rem)] font-display font-black leading-[0.85] tracking-tighter uppercase whitespace-nowrap">
+                <span className="block overflow-hidden py-[0.08em] -my-[0.08em]">
+                  <motion.span variants={lineRevealVariants} className="block">
+                    Daniel
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden py-[0.08em] -my-[0.08em] stroke">
+                  <motion.span variants={lineRevealVariants} className="block">
+                    Cimring
+                  </motion.span>
+                </span>
+              </h1>
+            </motion.div>
+
+            <motion.p
+              variants={itemVariants}
+              className="max-w-xl text-lg md:text-xl leading-relaxed text-on-surface/70 mb-10 md:mb-12"
+            >
+              {hero.tagline}
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-10 items-center"
+            >
+              <CtaLink href={`mailto:${email}`}>{hero.cta}</CtaLink>
+              <div className="flex gap-8">
+                <a
+                  href={socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-on-surface hover:text-primary transition-colors"
+                >
+                  <Github size={28} />
+                </a>
+                <a
+                  href={socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-on-surface hover:text-primary transition-colors"
+                >
+                  <Linkedin size={28} />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Portrait: first on mobile (85% wide, pushed right), columns 7–12 on desktop, bleeding to the viewport edge. */}
           <motion.div
-            variants={itemVariants}
-            className="block lg:hidden w-[85%] ml-auto mb-10 md:mb-12 relative"
+            style={{ y: portraitY }}
+            className="order-first lg:order-none relative z-10 w-[85%] ml-auto mb-14 lg:mb-0 lg:w-auto lg:ml-0 lg:col-start-7 lg:col-end-13 lg:row-start-1 lg:self-center mr-bleed will-change-transform"
           >
-            <div className="aspect-square bg-surface-container-high relative overflow-hidden">
+            <div className="relative aspect-[3/4] lg:aspect-auto lg:h-[calc(100vh-13rem)] lg:min-h-[28rem] lg:max-h-[52rem] bg-surface-container-high overflow-hidden">
               <picture>
                 <source
                   type="image/webp"
                   srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w"
-                  sizes="(min-width: 1024px) 30vw, 85vw"
+                  sizes="(min-width: 1024px) 50vw, 85vw"
                 />
                 <img
                   src="/daniel-960.jpg"
@@ -40,111 +119,57 @@ const Hero = () => (
                   width={854}
                   height={960}
                   fetchPriority="high"
-                  className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-100"
+                  className="absolute inset-0 w-full h-full object-cover object-top grayscale contrast-150 brightness-80"
                 />
               </picture>
-              <div className="absolute inset-0 border-[10px] border-primary/20 pointer-events-none" />
-              <div className="absolute bottom-0 right-0 bg-primary p-4">
-                <div className="text-[8px] font-display font-black text-on-primary uppercase tracking-[0.2em] mb-1">
-                  Focus 2026
-                </div>
-                <div className="text-sm font-display font-black text-on-primary uppercase tracking-tighter">
-                  AI Agents
-                </div>
-              </div>
+              <div className="absolute inset-0 border-[12px] lg:border-[20px] border-primary/20 pointer-events-none" />
+              <motion.div
+                aria-hidden="true"
+                variants={curtainVariants}
+                className="absolute inset-0 bg-background origin-right pointer-events-none"
+              />
             </div>
-          </motion.div>
-
-          <div className="flex gap-10 items-start mb-10 md:mb-12">
-            <div className="w-2 h-48 md:h-64 bg-primary shrink-0 mt-2" />
-            <motion.h1
+            <motion.div
               variants={itemVariants}
-              className="text-5xl sm:text-8xl md:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase"
+              className="absolute -bottom-5 -left-5 lg:-bottom-8 lg:-left-10 z-20 bg-primary p-5 lg:p-8"
             >
-              Daniel <br />
-              <span className="stroke">Cimring</span>
-            </motion.h1>
-          </div>
-
-          {/* Spacer matching the four <br/> elements this replaced (4 x 24px line-height) */}
-          <div className="h-24" aria-hidden="true" />
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-10 items-center"
-          >
-            <a
-              href={`mailto:${email}`}
-              className="px-10 py-5 bg-primary text-on-primary font-display font-black text-base uppercase tracking-tighter hover:bg-white transition-colors"
-            >
-              Start a Conversation
-            </a>
-            <div className="flex gap-8">
-              <a
-                href={socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="text-on-surface hover:text-primary transition-colors"
-              >
-                <Github size={28} />
-              </a>
-              <a
-                href={socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-on-surface hover:text-primary transition-colors"
-              >
-                <Linkedin size={28} />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="hidden lg:flex lg:col-span-4 relative mt-20 lg:mt-0 items-center">
-          <motion.div
-            variants={itemVariants}
-            className="w-full aspect-[3/4] bg-surface-container-high relative overflow-hidden"
-          >
-            <picture>
-              <source
-                type="image/webp"
-                srcSet="/daniel-480.webp 480w, /daniel-960.webp 960w"
-                sizes="(min-width: 1024px) 30vw, 85vw"
-              />
-              <img
-                src="/daniel-960.jpg"
-                alt="Daniel Cimring"
-                width={854}
-                height={960}
-                fetchPriority="high"
-                className="absolute inset-0 w-full h-full object-cover grayscale contrast-150 brightness-85"
-              />
-            </picture>
-            <div className="absolute inset-0 border-[20px] border-primary/20 pointer-events-none" />
-            <div className="absolute bottom-0 right-0 bg-primary p-8">
-              <div className="text-xs font-display font-black text-on-primary uppercase tracking-[0.3em] mb-2">
-                Focus 2026
+              <div className="text-[10px] lg:text-xs font-display font-black text-on-primary uppercase tracking-[0.3em] mb-1 lg:mb-2">
+                {hero.focus.label} {year}
               </div>
-              <div className="text-xl font-display font-black text-on-primary uppercase tracking-tighter">
-                AI Agents
+              <div className="text-base lg:text-xl font-display font-black text-on-primary uppercase tracking-tighter leading-none">
+                {hero.focus.value}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
-        </div>
-      </motion.div>
-    </div>
+        </motion.div>
+      </div>
 
-    <div className="absolute bottom-12 right-12 hidden md:block">
-      <div className="flex flex-col items-center gap-6">
+      <motion.div
+        style={{ opacity: cueOpacity }}
+        aria-hidden="true"
+        className="absolute bottom-12 right-12 z-30 hidden md:flex flex-col items-center gap-6"
+      >
         <span className="text-[10px] font-display font-black text-primary uppercase tracking-[0.5em] [writing-mode:vertical-lr]">
           Scroll
         </span>
-        <div className="w-1 h-24 bg-gradient-to-b from-primary to-transparent" />
-      </div>
-    </div>
-  </section>
-);
+        <div className="relative w-0.5 h-24 bg-on-surface/15 overflow-hidden">
+          {reduceMotion ? (
+            <div className="absolute inset-x-0 top-0 h-1/2 bg-primary" />
+          ) : (
+            <motion.div
+              className="absolute inset-x-0 top-0 h-1/2 bg-primary"
+              animate={{ y: ["-100%", "200%"] }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          )}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
 
 export default Hero;

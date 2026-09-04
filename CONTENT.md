@@ -19,20 +19,25 @@ Edit `src/data/projects.ts`. Append (or modify) an object:
 - The `01`-style number is derived from array position — reorder the array to renumber.
 - Cards without `href` render without the arrow and aren't clickable (by design).
 - Keep exactly one `variant: "light"` card per grid (currently the first entry).
+- **Projects:** the first card is rendered full-width (`featured`). The grid is 2 columns on tablet and 3 on desktop, so the rows fill exactly when `(count − 1)` is divisible by 6 (7, 13, 19 …). Other counts leave a short last row — fine, just know it's coming.
 
-Experience cards work identically in `src/data/experience.ts`.
+Experience cards work identically in `src/data/experience.ts` (no featured card; 6 cards fill both breakpoints).
 
 ## Add a skill badge
 
-Edit `src/data/skills.ts` — `{ name: "Rust", icon: Terminal }`. Icons come from `lucide-react`; add the icon to the import at the top if it's new.
+Edit `src/data/skills.ts` — `{ name: "Rust", icon: Terminal }`. Icons come from `lucide-react`; add the icon to the import at the top if it's new. Keep the count a multiple of 4 so the slab has no orphan cells (2 columns on mobile, 4 from tablet up). The same names also feed the hollow-type marquee above the slab.
 
 ## Add a journal article
 
 Edit `src/data/articles.ts` — `{ title, link }` with the full Medium article URL (not the profile URL).
 
+## Change the hero, quote, or writing intro
+
+`src/data/site.ts` holds `hero` (eyebrow badge, tagline, CTA label, the "Focus / AI Agents" tag — the year is added automatically), `navCta`, `impactQuote` (the yellow band under the hero) and `writing` (intro line + "More on Medium" label). The tagline is also the site description in `index.html`; keep the two in sync.
+
 ## Change nav links / socials / email
 
-`src/data/site.ts`. The nav, mobile menu, hero, and footer all read from here.
+`src/data/site.ts`. The nav, mobile menu, hero, and footer all read from here. **Nav order drives section numbering**: each link's `href` must match a section `id`, and the "01 / WORK" eyebrow on each heading comes from its position in `navLinks`.
 
 ## Swap the headshot
 
@@ -45,7 +50,7 @@ cwebp -q 80 public/daniel-960.jpg -o public/daniel-960.webp
 cwebp -q 80 /tmp/daniel-480.jpg -o public/daniel-480.webp
 ```
 
-If the new photo's aspect ratio differs from 854×960, update the `width`/`height` attributes on both `<img>` tags in `src/components/sections/Hero.tsx`, then regenerate the OG card (below).
+If the new photo's aspect ratio differs from 854×960, update the `width`/`height` attributes on the `<img>` in `src/components/sections/Hero.tsx`, then regenerate the OG card (below).
 
 ## Regenerate the OG link-preview card
 
@@ -71,4 +76,4 @@ Eyeball `/tmp/og.png` before committing. After deploying, refresh caches with th
 npm run lint && npm run format:check && npm run build
 ```
 
-Then spot-check `npm run dev` — hero, one light card, card hover flip, mobile menu, journal links.
+Then spot-check `npm run dev` — hero entrance and portrait bleed, one light card, card hover wipe, stack marquee, mobile menu (Escape and tap-outside close it), writing links.

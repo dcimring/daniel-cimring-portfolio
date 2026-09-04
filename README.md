@@ -55,7 +55,7 @@ src/
   types.ts           shared content types
   data/              ALL site content (projects, experience, skills, ...)
   components/        ArchiveCard, SkillBadge, ImpactBlock, motion variants
-  components/sections/  Nav, Hero, Experience, Projects, Stack, Insights, Footer
+  components/sections/  Nav, Hero, Experience, Projects, Stack, Writing, Footer
   lib/utils.ts       cn(), cardIndex()
 
 public/          static assets served directly

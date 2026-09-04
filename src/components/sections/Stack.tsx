@@ -1,29 +1,49 @@
 import { motion } from "framer-motion";
+import SectionHeading from "../SectionHeading";
 import SkillBadge from "../SkillBadge";
 import { skills } from "../../data/skills";
 import { stackContainerVariants } from "../motion";
 
+const marqueeItems = [...skills, ...skills];
+
 const Stack = () => (
   <section
     id="stack"
-    className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-outline-variant/10"
+    className="py-24 md:py-32 bg-background relative overflow-hidden"
   >
-    <div className="container mx-auto px-4 md:px-6">
-      <motion.h2
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false }}
-        className="text-[11.5vw] sm:text-7xl md:text-9xl font-display font-black tracking-tighter md:tracking-[calc(-0.05em)] leading-[0.85] uppercase mb-16 md:mb-24"
-      >
-        Core <br />
-        <span className="stroke">Technologies</span>
-      </motion.h2>
+    <div className="shell">
+      <SectionHeading
+        href="#stack"
+        line1="What I"
+        line2="Build With"
+        variant="offset"
+      />
+    </div>
+
+    {/* Full-bleed marquee of the same names in hollow type. Decorative: the grid below is the accessible list. */}
+    <div
+      aria-hidden="true"
+      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-4 mb-16 md:mb-20"
+    >
+      <div className="marquee-track">
+        {marqueeItems.map((skill, i) => (
+          <span
+            key={i}
+            className="inline-flex items-center whitespace-nowrap font-display font-black uppercase tracking-tighter leading-none text-6xl md:text-8xl stroke-dim after:content-[''] after:inline-block after:w-3 after:h-3 after:bg-primary after:mx-8"
+          >
+            {skill.name}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <div className="shell">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.1 }}
         variants={stackContainerVariants}
-        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0"
+        className="grid grid-cols-2 md:grid-cols-4 gap-0"
       >
         {skills.map((skill) => (
           <SkillBadge key={skill.name} name={skill.name} icon={skill.icon} />

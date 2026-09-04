@@ -24,9 +24,78 @@
   --radius-full: 0px;
 }
 
+/* One horizontal gutter scale for every section (see `shell` below). */
+:root {
+  --gutter: 1.5rem;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (width >= 48rem) {
+  :root {
+    --gutter: 2.5rem;
+  }
+}
+@media (width >= 80rem) {
+  :root {
+    --gutter: 4rem;
+  }
+}
+
+/* Page shell: max width + the shared gutter. Bleeds use `mr-bleed` / `w-screen`. */
+@utility shell {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Negative right margin that reaches the true viewport edge from inside `shell`. */
+@utility mr-bleed {
+  margin-right: calc(-1 * (var(--gutter) + max(0px, (100vw - 80rem) / 2)));
+}
+
 @utility glass-morphism {
   background-color: rgba(19, 19, 19, 0.8);
   backdrop-filter: blur(20px);
+}
+
+/* "Kinetic Gradient" for primary CTAs (DESIGN.md §2). */
+@utility kinetic-gradient {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dim)
+  );
+}
+
+/* The site's one CSS animation: the Stack marquee. Carries its own reduced-motion rule. */
+@utility marquee-track {
+  display: inline-flex;
+  animation: marquee 40s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Anchor targets land below the fixed 96px nav. */
+[id] {
+  scroll-margin-top: 6.5rem;
 }
 
 ::selection {
@@ -34,17 +103,19 @@
   color: var(--color-background);
 }
 
-:root {
-  background-color: var(--color-background);
-  color: var(--color-on-surface);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
   margin: 0;
   min-height: 100vh;
+}
+
+/* Keyboard focus: a square yellow ring (black on yellow surfaces). */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+.bg-primary :focus-visible,
+.bg-primary:focus-visible {
+  outline-color: var(--color-background);
 }
 
 /* Custom Scrollbar */
@@ -65,7 +136,16 @@ body {
   background: var(--color-primary);
 }
 
+/* Hollow display type. Keep on a static wrapper, never on a transforming element (iOS Safari). */
 .stroke {
   -webkit-text-stroke: 1px var(--on);
+  color: transparent;
+}
+.stroke-primary {
+  -webkit-text-stroke: 1px var(--color-primary);
+  color: transparent;
+}
+.stroke-dim {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
   color: transparent;
 }
