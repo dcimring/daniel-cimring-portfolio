@@ -27,7 +27,7 @@ export const projects: CardItem[] = [
     title: "Schooner",
     description:
       "Matches workers across the Caribbean with jobs in the region and uses AI agents to handle the steps in between. Built for the FutureCaribbean Buildathon.",
-    href: "https://deck.caribbean.work",
+    href: "https://caribbean.work",
     tags: ["AI", "Labor", "Infrastructure"],
   },
   {
