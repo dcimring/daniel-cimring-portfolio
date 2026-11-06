@@ -48,7 +48,7 @@ export const projects: CardItem[] = [
     title: "Corporate League",
     description:
       "WordPress plugin for Pickleball Cayman that turns the league’s Excel sheet into live leaderboards and status reports.",
-    href: "https://www.corpleague.xyz/matches",
+    href: "https://www.corpleague.xyz/leaderboard",
     tags: ["WP", "Automation", "Discord"],
   },
   {
