@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/projects/gazettepulse-regulations",
+      "destination": "/projects/gazettepulse",
+      "permanent": true
+    }
+  ]
 }

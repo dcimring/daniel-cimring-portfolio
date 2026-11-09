@@ -2,14 +2,15 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
-    title: "GazettePulse Regulations",
+    title: "GazettePulse",
     description:
-      "A searchable library of the Acts, Regulations, Rules and guidance that offshore regulators publish, covering Cayman, BVI, Bermuda, Jersey and Guernsey. Ask it a question and it points you at the source.",
-    href: "https://gazettepulse.com/regulations/",
+      "Early warning for offshore law firms and fiduciaries. Watches the official gazettes in Cayman, BVI, Bermuda, Jersey and Guernsey and turns notices into alerts tied to the section of law behind them.",
+    href: "https://gazettepulse.com",
     tags: ["AI", "Law", "Compliance"],
     details: [
-      "The library holds more than 5,000 documents across five offshore jurisdictions: the Cayman Islands, the British Virgin Islands, Bermuda, Jersey and Guernsey. That covers Acts, Regulations, Rules, Statements of Guidance and the advisory notices and circulars regulators put out.",
-      "It’s free to use and sorted by jurisdiction and category, so you can go straight to the rules for one place.",
+      "There are three parts to it. An insolvency radar flags liquidations, winding-up petitions and creditor meetings when they’re gazetted, matched against a firm’s clients and counterparties. An IP watch checks new marks against a client’s brands and dates each opposition window. Market analytics show which firms are taking liquidator appointments and where registrations are moving, starting with Cayman and BVI.",
+      "Every alert cites the gazette or register it came from and links to the controlling section in the regulatory library, which holds more than 5,000 Acts, Regulations, Rules and guidance documents.",
+      "It’s in private pilot now, with a handful of firms per jurisdiction. The regulatory library is already live.",
     ],
   },
   {
