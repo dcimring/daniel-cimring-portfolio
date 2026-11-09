@@ -52,10 +52,10 @@ export const projects: CardItem[] = [
     tags: ["WP", "Automation", "Discord"],
   },
   {
-    title: "DinkDash",
+    title: "CaymanDink",
     description:
-      "Community site for tracking pickleball rankings and player statistics. A hub for the local scene.",
-    href: "https://dinkdash.xyz",
+      "Independent tracker of Cayman Islands pickleball ratings. Daily rankings, weekly movers, and the full rating history of every player.",
+    href: "https://caymandink.com",
     tags: ["React", "Stats", "Pickleball"],
   },
   {
