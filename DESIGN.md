@@ -42,4 +42,5 @@ Links are real anchors with visible underlines. Keyboard focus is a 3px square m
 
 ## Brand assets
 
-`public/favicon.svg`, `public/apple-touch-icon.png` and `public/og.jpg` still use the previous yellow-and-black identity and need redrawing for this design.
+- `public/favicon.svg` and `public/apple-touch-icon.png`: the mint hero cursor on the page background.
+- `public/og.jpg`: 1200×630 type-only link-preview card rendered from `og-src/og.html` (commands in CONTENT.md). Its role line must match `hero.eyebrow` in `src/data/site.ts`.

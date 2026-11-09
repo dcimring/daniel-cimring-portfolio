@@ -55,7 +55,7 @@ If the new photo's aspect ratio differs from 854×960, update the `width`/`heigh
 
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
-  --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+  --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --virtual-time-budget=8000 \
   --window-size=1200,630 --screenshot=/tmp/og.png "file://$PWD/og-src/og.html"
 sips -s format jpeg -s formatOptions 88 /tmp/og.png --out public/og.jpg
 ```

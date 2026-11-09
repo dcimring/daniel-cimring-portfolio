@@ -34,7 +34,7 @@ const Hero = () => (
             width={854}
             height={960}
             fetchPriority="high"
-            className="block h-full w-full object-cover object-top mix-blend-lighten"
+            className="block h-full w-full object-cover object-top mix-blend-lighten brightness-90"
           />
         </picture>
       </div>
