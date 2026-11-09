@@ -17,7 +17,7 @@ Edit `src/data/projects.ts`. Append (or modify) an object:
 ```
 
 - The `01`-style number is derived from array position — reorder the array to renumber.
-- Cards without `href` render without the arrow and aren't clickable (by design).
+- Each project gets a page at `/projects/<slug-of-title>`, which its card links to; `href` becomes the page's "Visit site" button. Renaming a project changes its URL. Optional `details` (an array of paragraphs) adds longer copy to that page only. Add `page: false` for no page — the card then links straight to `href`, or isn't clickable without one.
 - Keep exactly one `variant: "light"` card per grid (currently the first entry).
 - **Projects:** the first card is rendered full-width (`featured`). The grid is 2 columns on tablet and 3 on desktop, so the rows fill exactly when `(count − 1)` is divisible by 6 (7, 13, 19 …). Other counts leave a short last row — fine, just know it's coming.
 

@@ -1,6 +1,7 @@
 import ArchiveCard from "../ArchiveCard";
 import SectionHeading from "../SectionHeading";
 import { projects } from "../../data/projects";
+import { projectPath } from "../../lib/projects";
 import { cardIndex } from "../../lib/utils";
 
 /** First card is featured (full row). With 3 columns, (count − 1) divisible by 6 fills every row — see CONTENT.md. */
@@ -23,6 +24,8 @@ const Projects = () => (
             index={cardIndex(i)}
             featured={i === 0}
             {...item}
+            href={item.page === false ? item.href : projectPath(item)}
+            internal={item.page !== false}
           />
         ))}
       </div>

@@ -10,8 +10,9 @@ import CtaLink from "../CtaLink";
  * handle the smooth scroll, the URL hash updates, and back/forward work.
  * The bar (not the <nav>) carries the backdrop blur, because a backdrop-filter
  * would otherwise become the containing block for the fixed mobile backdrop.
+ * `base` prefixes the links on pages other than the home page.
  */
-const Nav = () => {
+const Nav = ({ base = "" }: { base?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -60,7 +61,7 @@ const Nav = () => {
     <nav className="fixed top-0 w-full z-50">
       <div className="relative z-20 glass-morphism">
         <div className="shell h-24 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-4 group">
+          <a href={`${base}#top`} className="flex items-center gap-4 group">
             <div className="w-2 h-8 bg-primary" />
             <span className="font-display text-lg font-black tracking-tighter uppercase group-hover:text-primary transition-colors">
               Daniel Cimring
@@ -74,7 +75,7 @@ const Nav = () => {
               return (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={`${base}${link.href}`}
                   aria-current={isActive ? "location" : undefined}
                   className={cn(
                     "relative py-2 transition-colors hover:text-primary",
@@ -158,7 +159,7 @@ const Nav = () => {
                   <a
                     key={link.href}
                     ref={i === 0 ? firstLinkRef : undefined}
-                    href={link.href}
+                    href={`${base}${link.href}`}
                     onClick={closeMenu}
                     className="flex items-center justify-between group"
                   >

@@ -6,6 +6,7 @@ import {
 } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
 import { email, hero, socials } from "../../data/site";
+import { useCurrentYear } from "../../lib/useCurrentYear";
 import CtaLink from "../CtaLink";
 import {
   curtainVariants,
@@ -27,7 +28,7 @@ const Hero = () => {
   const portraitY = useTransform(scrollY, [0, 700], [0, 90]);
   const nameY = useTransform(scrollY, [0, 700], [0, -40]);
   const cueOpacity = useTransform(scrollY, [0, 240], [1, 0]);
-  const year = new Date().getFullYear();
+  const year = useCurrentYear();
 
   return (
     <section className="min-h-screen flex items-center pt-32 lg:pt-28 pb-12 md:pb-20 relative overflow-hidden bg-background">

@@ -16,6 +16,7 @@ const ArchiveCard = ({
   description,
   tags,
   href,
+  internal = false,
   variant = "dark",
   featured = false,
 }: {
@@ -24,6 +25,8 @@ const ArchiveCard = ({
   description: string;
   tags: string[];
   href?: string;
+  /** Link stays on this site, in the same tab. */
+  internal?: boolean;
   variant?: "dark" | "light";
   featured?: boolean;
 }) => {
@@ -117,8 +120,10 @@ const ArchiveCard = ({
       {href ? (
         <a
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(!internal && {
+            target: "_blank",
+            rel: "noopener noreferrer",
+          })}
           className="block h-full"
         >
           {content}

@@ -2,6 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "portfolio-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--", "--port", "5198", "--strictPort"],
+      "port": 5198,
+      "autoPort": false
+    },
+    {
       "name": "portfolio-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "--port", "5199", "--strictPort"],

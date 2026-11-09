@@ -15,6 +15,13 @@ export interface CardItem {
   variant?: "light";
 }
 
+export interface Project extends CardItem {
+  /** Extra paragraphs shown only on the project's own page. */
+  details?: string[];
+  /** `false` skips the project's own page; the card links straight to `href`. */
+  page?: false;
+}
+
 export interface Article {
   title: string;
   link: string;

@@ -9,15 +9,18 @@ const CtaLink = ({
   href,
   children,
   size = "md",
+  external = false,
   className,
 }: {
   href: string;
   children: React.ReactNode;
   size?: "sm" | "md";
+  external?: boolean;
   className?: string;
 }) => (
   <a
     href={href}
+    {...(external && { target: "_blank", rel: "noopener noreferrer" })}
     className={cn(
       "group relative inline-block overflow-hidden bg-on-surface text-background font-display font-black uppercase text-center",
       size === "sm"
