@@ -7,7 +7,6 @@ export const projects: Project[] = [
       "A searchable library of the Acts, Regulations, Rules and guidance that offshore regulators publish, covering Cayman, BVI, Bermuda, Jersey and Guernsey. Ask it a question and it points you at the source.",
     href: "https://gazettepulse.com/regulations/",
     tags: ["AI", "Law", "Compliance"],
-    variant: "light",
     details: [
       "The library holds more than 5,000 documents across five offshore jurisdictions: the Cayman Islands, the British Virgin Islands, Bermuda, Jersey and Guernsey. That covers Acts, Regulations, Rules, Statements of Guidance and the advisory notices and circulars regulators put out.",
       "It’s free to use and sorted by jurisdiction and category, so you can go straight to the rules for one place.",

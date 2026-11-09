@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a single-page portfolio built with Vite, React 19, TypeScript, Tailwind CSS v4, and Framer Motion. Application code lives in `src/`: `main.tsx` boots the app, `App.tsx` composes the section components from `src/components/sections/`, all site content lives in `src/data/*.ts`, `index.css` defines theme tokens and global styles, and `lib/utils.ts` holds shared helpers such as `cn()`. Static files served as-is live in `public/`; the source photo and OG-card template live in `og-src/` (not shipped). Reference docs sit at the repo root: `ARCHITECTURE.md` (structure), `CONTENT.md` (content-editing and deploy runbook), and `DESIGN.md` (visual rules).
+This repository is a single-page portfolio built with Vite, React 19, TypeScript, and Tailwind CSS v4. Application code lives in `src/`: `main.tsx` boots the app, `App.tsx` composes the section components from `src/components/sections/`, all site content lives in `src/data/*.ts`, `index.css` defines theme tokens and global styles, and `lib/utils.ts` holds shared helpers. Static files served as-is live in `public/`; the source photo and OG-card template live in `og-src/` (not shipped). Reference docs sit at the repo root: `ARCHITECTURE.md` (structure), `CONTENT.md` (content-editing and deploy runbook), and `DESIGN.md` (visual rules).
 
 **Content edits** (adding a project, changing a link, etc.) belong in `src/data/` — follow `CONTENT.md` rather than editing components.
 

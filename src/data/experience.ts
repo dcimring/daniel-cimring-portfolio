@@ -4,9 +4,8 @@ export const experience: CardItem[] = [
   {
     title: "Building with AI agents",
     description:
-      "Most of the projects below were built with AI coding agents, usually by one person. I spend my time deciding what to build and checking the work, not typing it out.",
+      "Most of the projects above were built with AI coding agents, usually by one person. I spend my time deciding what to build and checking the work, not typing it out.",
     tags: ["AI Agents", "Efficiency", "Automation"],
-    variant: "light",
   },
   {
     title: "Founder & CEO",

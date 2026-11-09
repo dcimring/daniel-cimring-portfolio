@@ -1,8 +1,6 @@
-import type { LucideIcon } from "lucide-react";
-
 /**
- * A card in the Experience or Projects grid.
- * The visible "01"-style index is derived from array position at render time —
+ * An entry in the Work or Projects list.
+ * The visible "001"-style index is derived from array position at render time —
  * do not store it here.
  */
 export interface CardItem {
@@ -11,8 +9,6 @@ export interface CardItem {
   tags: string[];
   /** External link. Omit for cards that aren't clickable. */
   href?: string;
-  /** "light" renders the yellow-on-black inverted card. Omit for the default dark card. */
-  variant?: "light";
 }
 
 export interface Project extends CardItem {
@@ -29,7 +25,6 @@ export interface Article {
 
 export interface Skill {
   name: string;
-  icon: LucideIcon;
 }
 
 export interface NavLink {

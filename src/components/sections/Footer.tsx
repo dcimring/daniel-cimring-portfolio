@@ -1,45 +1,34 @@
 import { email, socials } from "../../data/site";
-import { useCurrentYear } from "../../lib/useCurrentYear";
 
 const footerLinks = [
-  { name: "Github", href: socials.github },
-  { name: "Linkedin", href: socials.linkedin },
-  { name: "Medium", href: socials.medium },
+  { name: "github", href: socials.github },
+  { name: "linkedin", href: socials.linkedin },
+  { name: "medium", href: socials.medium },
 ];
 
-const Footer = () => {
-  const year = useCurrentYear();
-  return (
-    <footer className="py-24 bg-surface-container">
-      <div className="shell flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-        <div className="flex items-center gap-4">
-          <div className="w-2 h-8 bg-primary" />
-          <span className="text-xs font-display font-black uppercase tracking-[0.4em] text-on-surface/60">
-            Daniel Cimring // {year}
-          </span>
-        </div>
-        <div className="flex flex-wrap gap-x-12 gap-y-6 text-[11px] font-display font-black uppercase tracking-[0.3em] text-on-surface/60">
-          {footerLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a
-            href={`mailto:${email}`}
-            className="hover:text-primary transition-colors"
-          >
-            Email
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer className="pb-8 md:pb-10">
+    <p className="mb-1.5 text-muted md:mb-2">$ mail</p>
+    <a
+      href={`mailto:${email}`}
+      className="inline-block py-1.5 text-[min(8vw,1.9375rem)] leading-[1.15] font-extrabold tracking-[-0.06em] md:py-2 md:text-[clamp(2rem,4.6vw,4rem)] md:leading-[1.1] md:tracking-[-0.04em]"
+    >
+      {email}
+    </a>
+    <div className="mt-3 flex gap-6 md:mt-5">
+      {footerLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="py-3"
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </footer>
+);
 
 export default Footer;

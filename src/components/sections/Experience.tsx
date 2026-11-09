@@ -1,20 +1,17 @@
-import ArchiveCard from "../ArchiveCard";
-import SectionHeading from "../SectionHeading";
 import { experience } from "../../data/experience";
-import { cardIndex } from "../../lib/utils";
 
 const Experience = () => (
-  <section
-    id="work"
-    className="py-24 md:py-32 bg-background relative overflow-hidden"
-  >
-    <div className="shell">
-      <SectionHeading href="#work" line1="Where I’ve" line2="Worked" />
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1">
-        {experience.map((item, i) => (
-          <ArchiveCard key={item.title} index={cardIndex(i)} {...item} />
-        ))}
-      </div>
+  <section id="work" className="pb-12 md:pb-20">
+    <h2 className="mb-5 text-muted md:mb-6">$ history</h2>
+    <div className="grid grid-cols-1 gap-x-16 gap-y-6.5 lg:grid-cols-2 lg:gap-y-8">
+      {experience.map((item) => (
+        <article key={item.title}>
+          <h3 className="mb-1 text-[17px] leading-[1.3] font-bold text-accent md:mb-1.5 md:text-lg">
+            {item.title}
+          </h3>
+          <p>{item.description}</p>
+        </article>
+      ))}
     </div>
   </section>
 );

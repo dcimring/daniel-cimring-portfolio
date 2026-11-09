@@ -3,13 +3,11 @@ import type { NavLink } from "../types";
 export const email = "dcimring@gmail.com";
 
 /**
- * Nav order drives the "01 / WORK" section numbering (see `sectionIndex()` in
- * `lib/utils.ts`). Each `href` must match a section `id` and be listed here in
- * page order.
+ * Each `href` must match a section `id`. Listed in page order.
  */
 export const navLinks: NavLink[] = [
-  { name: "Work", href: "#work" },
   { name: "Projects", href: "#projects" },
+  { name: "Work", href: "#work" },
   { name: "Stack", href: "#stack" },
   { name: "Writing", href: "#writing" },
 ];
@@ -25,13 +23,11 @@ export const hero = {
   tagline:
     "I started a mobile social network in South Africa, ran product for an online gaming company, and now ship products with AI agents from Cayman.",
   cta: "Get in touch",
-  /** Yellow tag hanging off the portrait. The year is added at render time. */
+  /** Caption under the portrait. */
   focus: { label: "Focus", value: "AI Agents" },
 };
 
-export const navCta = "Email me";
-
-/** Full-width yellow pull-quote under the hero. */
+/** Pull-quote under the hero. The part after the last colon is highlighted. */
 export const impactQuote =
   "I got an early computer as a kid and started writing code. I’m still at it, and the goal hasn’t changed: build things people actually enjoy using.";
 

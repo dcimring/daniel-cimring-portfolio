@@ -7,7 +7,6 @@ A single-page portfolio built with React, TypeScript, Vite, and Tailwind CSS v4.
 - React 19 + TypeScript
 - Vite 8 for local development and production builds
 - Tailwind CSS v4 for styling and theme tokens
-- Framer Motion for motion and interaction
 - Lucide React for iconography
 
 ## Local Development
@@ -54,7 +53,7 @@ src/
   index.css          global styles, Tailwind theme tokens
   types.ts           shared content types
   data/              ALL site content (projects, experience, skills, ...)
-  components/        ArchiveCard, SkillBadge, ImpactBlock, motion variants
+  components/        PageShell, ProjectPage, PullQuote, CtaLink
   components/sections/  Nav, Hero, Experience, Projects, Stack, Writing, Footer
   lib/utils.ts       cn(), cardIndex()
 

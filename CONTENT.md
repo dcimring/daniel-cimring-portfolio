@@ -12,20 +12,17 @@ Edit `src/data/projects.ts`. Append (or modify) an object:
   description: "One or two sentences. End with a period.",
   href: "https://example.com",        // omit entirely if there's no link
   tags: ["AI", "SaaS", "Whatever"],   // rendered joined with " / "
-  // variant: "light",                // only for the ONE highlighted yellow card
 }
 ```
 
 - The `01`-style number is derived from array position — reorder the array to renumber.
 - Each project gets a page at `/projects/<slug-of-title>`, which its card links to; `href` becomes the page's "Visit site" button. Renaming a project changes its URL. Optional `details` (an array of paragraphs) adds longer copy to that page only. Add `page: false` for no page — the card then links straight to `href`, or isn't clickable without one.
-- Keep exactly one `variant: "light"` card per grid (currently the first entry).
-- **Projects:** the first card is rendered full-width (`featured`). The grid is 2 columns on tablet and 3 on desktop, so the rows fill exactly when `(count − 1)` is divisible by 6 (7, 13, 19 …). Other counts leave a short last row — fine, just know it's coming.
 
-Experience cards work identically in `src/data/experience.ts` (no featured card; 6 cards fill both breakpoints).
+Experience entries work identically in `src/data/experience.ts`.
 
 ## Add a skill badge
 
-Edit `src/data/skills.ts` — `{ name: "Rust", icon: Terminal }`. Icons come from `lucide-react`; add the icon to the import at the top if it's new. Keep the count a multiple of 4 so the slab has no orphan cells (2 columns on mobile, 4 from tablet up). The same names also feed the hollow-type marquee above the slab.
+Edit `src/data/skills.ts` — `{ name: "Rust" }`. Names are displayed in lower-case file style automatically (`React / TS` becomes `react/ts`).
 
 ## Add a journal article
 
@@ -33,7 +30,7 @@ Edit `src/data/articles.ts` — `{ title, link }` with the full Medium article U
 
 ## Change the hero, quote, or writing intro
 
-`src/data/site.ts` holds `hero` (eyebrow badge, tagline, CTA label, the "Focus / AI Agents" tag — the year is added automatically), `navCta`, `impactQuote` (the yellow band under the hero) and `writing` (intro line + "More on Medium" label). The tagline is also the site description in `index.html`; keep the two in sync.
+`src/data/site.ts` holds `hero` (role line, tagline, CTA label, the "Focus / AI Agents" caption under the portrait), `impactQuote` (the pull-quote under the hero; the part after the last colon is highlighted) and `writing` (intro line + "More on Medium" label). The tagline is also the site description in `index.html`; keep the two in sync.
 
 ## Change nav links / socials / email
 
@@ -41,13 +38,13 @@ Edit `src/data/articles.ts` — `{ title, link }` with the full Medium article U
 
 ## Swap the headshot
 
-The untouched source photo is `og-src/daniel-source.jpg`. After replacing it, regenerate the shipped variants (needs `cwebp`: `brew install webp`):
+The untouched source photo is `og-src/daniel-source.jpg`; `og-src/daniel-graded.jpg` is the shipped version, with extra contrast and its blacks mapped to the page background (`#0d1210`). After replacing it, regenerate the shipped variants (needs `cwebp`: `brew install webp`):
 
 ```bash
-sips -Z 960 og-src/daniel-source.jpg --out public/daniel-960.jpg
-sips -Z 480 og-src/daniel-source.jpg --out /tmp/daniel-480.jpg
-cwebp -q 80 public/daniel-960.jpg -o public/daniel-960.webp
-cwebp -q 80 /tmp/daniel-480.jpg -o public/daniel-480.webp
+sips -Z 960 og-src/daniel-graded.jpg --out public/daniel-960.jpg
+sips -Z 480 og-src/daniel-graded.jpg --out /tmp/daniel-480.jpg
+cwebp -q 90 public/daniel-960.jpg -o public/daniel-960.webp
+cwebp -q 90 /tmp/daniel-480.jpg -o public/daniel-480.webp
 ```
 
 If the new photo's aspect ratio differs from 854×960, update the `width`/`height` attributes on the `<img>` in `src/components/sections/Hero.tsx`, then regenerate the OG card (below).
@@ -76,4 +73,4 @@ Eyeball `/tmp/og.png` before committing. After deploying, refresh caches with th
 npm run lint && npm run format:check && npm run build
 ```
 
-Then spot-check `npm run dev` — hero entrance and portrait bleed, one light card, card hover wipe, stack marquee, mobile menu (Escape and tap-outside close it), writing links.
+Then spot-check `npm run dev` — hero and portrait on desktop and phone, project links, a project page, writing links.
