@@ -56,7 +56,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
 
           <div className="flex gap-6 md:gap-10 items-start mb-12 md:mb-16">
             <div className="w-2 self-stretch bg-primary shrink-0 mt-1" />
-            <h1 className="min-w-0 text-[clamp(2.75rem,9vw,7.5rem)] font-display font-black leading-[0.9] tracking-tighter uppercase wrap-break-word overflow-hidden py-[0.08em] -my-[0.08em]">
+            <h1 className="min-w-0 text-[clamp(1.75rem,8.5vw,7.5rem)] font-display font-black leading-[0.9] tracking-tighter uppercase wrap-break-word overflow-hidden py-[0.08em] -my-[0.08em]">
               <motion.span variants={lineRevealVariants} className="block">
                 {project.title}
               </motion.span>
