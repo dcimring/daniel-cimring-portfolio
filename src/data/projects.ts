@@ -49,6 +49,18 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "Caymandesk",
+    description:
+      "Job alerts for lawyers and finance professionals thinking about a move to Cayman. Every role that fits, sent the day it’s posted, with no CV and no recruiter calls.",
+    href: "https://caymandesk.com",
+    tags: ["Jobs", "Law", "Finance"],
+    details: [
+      "Twice a day it checks every firm’s careers page, the WORC work-permit portal and the recruiters’ lists, and emails you only when a matching role turns up. The Desk Notes digest lands at 7:30 each morning.",
+      "Alongside the alerts there are package benchmarks by PQE band for legal and finance roles, a take-home pay comparison against London and a work-permit timeline.",
+      "It’s built for a move you haven’t told anyone about yet. The sender name is neutral, there are no tracking pixels, there’s a quick-exit button, and moves are reported by tier, practice and band without naming anyone.",
+    ],
+  },
+  {
     title: "Idea Validator",
     description:
       "Platform to manage and validate startup ideas via personalized feedback links and industry insights.",
