@@ -4,13 +4,13 @@ export const projects: Project[] = [
   {
     title: "GazettePulse",
     description:
-      "Early warning for offshore law firms and fiduciaries. Watches the official gazettes in Cayman, BVI, Bermuda, Jersey and Guernsey and turns notices into alerts tied to the section of law behind them.",
+      "Daily gazette monitoring for corporate service providers, registered agents and trust companies. Flags when an entity you administer appears in a gazette in Cayman, BVI, Bermuda, Jersey or Guernsey, and keeps a record that you checked.",
     href: "https://gazettepulse.com",
-    tags: ["AI", "Law", "Compliance"],
+    tags: ["AI", "Compliance", "Offshore"],
     details: [
-      "There are three parts to it. An insolvency radar flags liquidations, winding-up petitions and creditor meetings when they’re gazetted, matched against a firm’s clients and counterparties. An IP watch checks new marks against a client’s brands and dates each opposition window. Market analytics show which firms are taking liquidator appointments and where registrations are moving, starting with Cayman and BVI.",
-      "Every alert cites the gazette or register it came from and links to the controlling section in the regulatory library, which holds more than 5,000 Acts, Regulations, Rules and guidance documents.",
-      "It’s in private pilot now, with a handful of firms per jurisdiction. The regulatory library is already live.",
+      "Every day it checks the official gazettes and registry notices in all five jurisdictions against a firm’s entity portfolio. It covers liquidations and winding-up petitions, strike-offs and restorations, appointments and name changes, and trade mark notices in the IP gazette, with the opposition window for each.",
+      "Every check is logged, including the days when nothing turns up, and the log can be exported for a compliance file. Each alert cites the gazette issue it came from and links to the relevant section of law in a cross-linked library of Acts, Regulations, Rules and guidance notes.",
+      "Behind it is an index of more than 245,000 gazette notices, with the Cayman archive going back to 2005. It’s in private pilot now, with a handful of firms per jurisdiction.",
     ],
   },
   {
