@@ -64,8 +64,8 @@ Eyeball `/tmp/og.png` before committing. After deploying, refresh caches with th
 
 ## Deploy
 
-- **Automatic (normal path):** push to `main` — the Vercel GitHub integration builds and deploys to https://danielcimring.com. CI (lint + format + build) runs in parallel on GitHub Actions.
-- **Manual:** `npx vercel --prod` from the repo root (project link is in `.vercel/`, which is gitignored — run `npx vercel link` first on a fresh clone).
+- Run `npm run deploy` from the repo root: lint, format check, build, then `wrangler deploy` to Cloudflare Workers (https://danielcimring.com). Run `npx wrangler login` once on a new machine.
+- Pushing to `main` does **not** deploy; it only runs CI (lint + format + build) on GitHub Actions. Commit and push as well so the repo matches what's live.
 
 ## Pre-ship checklist
 

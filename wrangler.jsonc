@@ -1,6 +1,6 @@
 // Cloudflare Workers static-assets deploy. No Worker script: dist/ is served as-is.
 // `drop-trailing-slash` gives clean URLs (/projects/x serves projects/x.html and
-// /projects/x.html redirects to /projects/x), matching the old vercel.json cleanUrls.
+// /projects/x.html redirects to /projects/x).
 // Path redirects live in public/_redirects.
 {
   "$schema": "node_modules/wrangler/config-schema.json",

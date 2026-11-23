@@ -89,7 +89,7 @@ if (new Set(paths).size !== paths.length) {
 const template = readFileSync(join(DIST, "index.html"), "utf8");
 
 for (const page of pages) {
-  // Written as /projects/x.html; `cleanUrls` in vercel.json serves it at /projects/x.
+  // Written as /projects/x.html; `html_handling` in wrangler.jsonc serves it at /projects/x.
   const file = join(DIST, `${page.path}.html`);
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, projectHtml(template, page));

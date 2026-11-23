@@ -19,7 +19,7 @@ Use `npm run lint && npm run format:check && npm run build` before opening a PR.
 
 ## Deployment
 
-Pushing to `main` auto-deploys to https://danielcimring.com via the Vercel GitHub integration. Manual deploys: `npx vercel --prod` (see CONTENT.md). Do not add the `vercel` CLI to dependencies.
+Hosted on Cloudflare Workers static assets (`wrangler.jsonc`). Pushing does not deploy; `npm run deploy` runs the checks, builds and runs `wrangler deploy` (see CONTENT.md).
 
 ## Coding Style & Naming Conventions
 

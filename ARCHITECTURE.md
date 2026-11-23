@@ -1,6 +1,6 @@
 # Architecture
 
-Portfolio: Vite 8 + React 19 + TypeScript (strict) + Tailwind CSS v4. No router, no state management, no backend — a home page of sections plus one static page per project, all prerendered to HTML at build time (see Prerendering). Deployed to Vercel (see README → Deployment).
+Portfolio: Vite 8 + React 19 + TypeScript (strict) + Tailwind CSS v4. No router, no state management, no backend — a home page of sections plus one static page per project, all prerendered to HTML at build time (see Prerendering). Deployed to Cloudflare Workers static assets (see README → Deployment).
 
 ## File tree
 
@@ -34,7 +34,7 @@ src/
 
 ## Prerendering
 
-`npm run build` makes a client build into `dist/`, an SSR build of `src/entry-server.tsx` into `dist-ssr/`, then runs `scripts/prerender.mjs`. That script renders `<Root>` for `/` and each `/projects/<slug>`, writes the HTML plus per-page meta and JSON-LD, and generates `dist/sitemap.xml`. `main.tsx` hydrates the result (or client-renders under `npm run dev`, where `#root` is empty, so per-page meta only exists in a build). Links between pages are plain anchors: full page loads, no router. Slugs derive from project titles, so renaming a project changes its URL. `vercel.json` `cleanUrls` serves `projects/x.html` at `/projects/x`. Anything rendered must match between build and browser.
+`npm run build` makes a client build into `dist/`, an SSR build of `src/entry-server.tsx` into `dist-ssr/`, then runs `scripts/prerender.mjs`. That script renders `<Root>` for `/` and each `/projects/<slug>`, writes the HTML plus per-page meta and JSON-LD, and generates `dist/sitemap.xml`. `main.tsx` hydrates the result (or client-renders under `npm run dev`, where `#root` is empty, so per-page meta only exists in a build). Links between pages are plain anchors: full page loads, no router. Slugs derive from project titles, so renaming a project changes its URL. `wrangler.jsonc` `html_handling: drop-trailing-slash` serves `projects/x.html` at `/projects/x`; old paths redirect via `public/_redirects`. Anything rendered must match between build and browser.
 
 ## Layering
 

@@ -39,10 +39,9 @@ All site content (project cards, experience, skills, journal articles, links) li
 
 ## Deployment
 
-Hosted on Vercel as `daniel-cimring-portfolio`, live at **https://danielcimring.com**.
+Hosted on Cloudflare Workers (static assets) as `daniel-cimring-portfolio`, live at **https://danielcimring.com**. Config is in `wrangler.jsonc`; path redirects are in `public/_redirects`.
 
-- **Automatic:** pushing to `main` triggers a production deploy via the Vercel GitHub integration.
-- **Manual:** `npx vercel --prod` (run `npx vercel link` first on a fresh clone; the `.vercel/` link directory is gitignored).
+- **Deploy:** `npm run deploy` runs lint, format check and build, then `wrangler deploy`. Pushing to `main` does not deploy. Run `npx wrangler login` once on a new machine.
 
 ## Project Structure
 
