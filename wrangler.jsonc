@@ -1,0 +1,19 @@
+// Cloudflare Workers static-assets deploy. No Worker script: dist/ is served as-is.
+// `drop-trailing-slash` gives clean URLs (/projects/x serves projects/x.html and
+// /projects/x.html redirects to /projects/x), matching the old vercel.json cleanUrls.
+// Path redirects live in public/_redirects.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "daniel-cimring-portfolio",
+  "compatibility_date": "2026-11-01",
+  // Route (not Custom Domain): the proxied DNS record still exists, but Cloudflare
+  // answers every request at the edge, so the old origin is never reached.
+  "routes": [
+    { "pattern": "danielcimring.com/*", "zone_name": "danielcimring.com" },
+  ],
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "none",
+  },
+}
